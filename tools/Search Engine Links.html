@@ -1,0 +1,176 @@
+# Script Html CSS js from option dengan 100 url search engine
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Engine Links</h1>
+    <ul id="searchEngines"></ul>
+
+    <script>
+        const searchEngines = [
+            "https://www.google.com",
+            "https://www.bing.com",
+            "https://www.yahoo.com",
+            "https://www.duckduckgo.com",
+            "https://www.ask.com",
+            "https://www.aol.com",
+            "https://www.baidu.com",
+            "https://www.yandex.com",
+            "https://www.naver.com",
+            "https://www.seznam.cz",
+            "https://www.startpage.com",
+            "https://www.qwant.com",
+            "https://www.gibiru.com",
+            "https://www.ecosia.org",
+            "https://www.searchencrypt.com",
+            "https://www.wolframalpha.com",
+            "https://www.goo.gl",
+            "https://www.yippy.com",
+            "https://www.blekko.com",
+            "https://www.webcrawler.com",
+            "https://www.metacrawler.com",
+            "https://www.dogpile.com",
+            "https://www.info.com",
+            "https://www.alltheweb.com",
+            "https://www.lycos.com",
+            "https://www.jeeves.com",
+            "https://www.sogou.com",
+            "https://www.360.cn",
+            "https://www.qihoo.com",
+            "https://www.soso.com",
+            "https://www.yandex.ru",
+            "https://www.t.co",
+            "https://www.bing.com/images",
+            "https://www.google.com/images",
+            "https://www.bing.com/videos",
+            "https://www.google.com/videos",
+            "https://www.bing.com/maps",
+            "https://www.google.com/maps",
+            "https://www.bing.com/news",
+            "https://www.google.com/news",
+            "https://www.bing.com/shopping",
+            "https://www.google.com/shopping",
+            "https://www.bing.com/finance",
+            "https://www.google.com/finance",
+            "https://www.bing.com/weather",
+            "https://www.google.com/weather",
+            "https://www.bing.com/search?q=site%3A.com",
+            "https://www.google.com/search?q=site%3A.com",
+            "https://www.bing.com/search?q=site%3A.org",
+            "https://www.google.com/search?q=site%3A.org",
+            "https://www.bing.com/search?q=site%3A.edu",
+            "https://www.google.com/search?q=site%3A.edu",
+            "https://www.bing.com/search?q=site%3A.gov",
+            "https://www.google.com/search?q=site%3A.gov",
+            "https://www.bing.com/search?q=site%3A.net",
+            "https://www.google.com/search?q=site%3A.net",
+            "https://www.bing.com/search?q=site%3A.info",
+            "https://www.google.com/search?q=site%3A.info",
+            "https://www.bing.com/search?q=site%3A.biz",
+            "https://www.google.com/search?q=site%3A.biz",
+            "https://www.bing.com/search?q=site%3A.co",
+            "https://www.google.com/search?q=site%3A.co",
+            "https://www.bing.com/search?q=site%3A.us",
+            "https://www.google.com/search?q=site%3A.us",
+            "https://www.bing.com/search?q=site%3A.uk",
+            "https://www.google.com/search?q=site%3A.uk",
+            "https://www.bing.com/search?q=site%3A.ca",
+            "https://www.google.com/search?q=site%3A.ca",
+            "https://www.bing.com/search?q=site%3A.au",
+            "https://www.google.com/search?q=site%3A.au",
+            "https://www.bing.com/search?q=site%3A.in",
+            "https://www.google.com/search?q=site%3A.in",
+            "https://www.bing.com/search?q=site%3A.de",
+            "https://www.google.com/search?q=site%3A.de",
+            "https://www.bing.com/search?q=site%3A.fr",
+            "https://www.google.com/search?q=site%3A.fr",
+            "https://www.bing.com/search?q=site%3A.jp",
+            "https://www.google.com/search?q=site%3A.jp",
+            "https://www.bing.com/search?q=site%3A.cn",
+            "https://www.google.com/search?q=site%3A.cn",
+            "https://www.bing.com/search?q=site%3A.ru",
+            "https://www.google.com/search?q=site%3A.ru",
+            "https://www.bing.com/search?q=site%3A.br",
+            "https://www.google.com/search?q=site%3A.br",
+            "https://www.bing.com/search?q=site%3A.it",
+            "https://www.google.com/search?q=site%3A.it",
+            "https://www.bing.com/search?q=site%3A.es",
+            "https://www.google.com/search?q=site%3A.es",
+            "https://www.bing.com/search?q=site%3A.nl",
+            "https://www.google.com/search?q=site%3A.nl",
+            "https://www.bing.com/search?q=site%3A.se",
+            "https://www.google.com/search?q=site%3A.se",
+            "https://www.bing.com/search?q=site%3A.no",
+            "https://www.google.com/search?q=site%3A.no",
+            "https://www.bing.com/search?q=site%3A.fi",
+            "https://www.google.com/search?q=site%3A.fi",
+            "https://www.bing.com/search?q=site%3A.dk",
+            "https://www.google.com/search?q=site%3A.dk",
+            "https://www.bing.com/search?q=site%3A.ch",
+            "https://www.google.com/search?q=site%3A.ch",
+            "https://www.bing.com/search?q=site%3A.at",
+            "https://www.google.com/search?q=site%3A.at",
+            "https://www.bing.com/search?q=site%3A.pt",
+            "https://www.google.com/search?q=site%3A.pt",
+            "https://www.bing.com/search?q=site%3A.ie",
+            "https://www.google.com/search?q=site%3A.ie",
+            "https://www.bing.com/search?q=site%3A.gr",
+            "https://www.google.com/search?q=site%3A.gr",
+            "https://www.bing.com/search?q=site%3A.hu",
+            "https://www.google.com/search?q=site%3A.hu",
+            "https://www.bing.com/search?q=site%3A.tr",
+            "https://www.google.com/search?q=site%3A.tr",
+            "https://www.bing.com/search?q=site%3A.co.za",
+            "https://www.google.com/search?q=site%3A.co.za",
+            "https://www.bing.com/search?q=site%3A.co.in",
+            "https://www.google.com/search?q=site%3A.co.in",
+            "https://www.bing.com/search?q=site%3A.co.jp",
+            "https://www.google.com/search?q=site%3A.co.jp",
+            "https://www.bing.com/search?q=site%3A.co.kr",
+            "https://www.google.com/search?q=site%3A.co.kr",
+            "https://www.bing.com/search?q=site%3A.co.nz",
+            "https://www.google.com/search?q=site%3A.co.nz",
+            "https://www.bing.com/search?q=site%3A.co.ae",
+            "https://www.google.com/search?q=site%3A.co.ae"
+        ];
+
+        const searchEnginesList = document.getElementById('searchEngines');
+        searchEngines.forEach(url => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = url;
+            link.textContent = url;
+            listItem.appendChild(link);
+            searchEnginesList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

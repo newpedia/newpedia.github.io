@@ -1,0 +1,249 @@
+
+<style>
+  .generator-whatsapp {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 20px 0;
+  max-width: 800px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  line-height: 1.5;
+  }
+  .form-wa {
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 20px);
+  }
+  .form-wa label {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  }
+  .form-wa input, .form-wa textarea {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+  background: #fff;
+  color: #444;
+  border: 1.5px solid #007bff;
+  outline: none;
+  border-radius: 5px;
+  }
+  .form-wa textarea {
+  height: 175px;
+  font: inherit;
+  font-size: 95%;
+  line-height: normal;
+  vertical-align: baseline;
+  }  
+  button#generate-wa {
+  color: #fff;
+  background-color: #007bff;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 15px;
+  margin: 0 auto;
+  width: calc(100% - 30px);
+  }
+  button#download-qr,button#copy-link,button#test-link,button#reset-qr {
+  color: #fff;
+  background-color: #007bff;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 15px;
+  margin: 0 auto;
+  } 
+  button#download-qr {
+  display: block;
+  margin: 5px auto;
+  }  
+  .hasil-generate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.5s;
+  background: #ffffff;
+  }
+  .image-generate {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 auto;
+  width: 200px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  }
+  .qrcode {
+  position: relative;
+  display: block;
+  margin: 10px auto;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  }
+  .qrcode canvas#canvas {
+  background: #ddd;
+  width: 180px;
+  height: 180px;
+  }  
+  .result-generate {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 50%;
+  flex: 1 1 auto;
+  width: calc(100% - 200px);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  }
+  .form-result {
+  position: relative;
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  width: calc(100% - 20px);
+  }
+  .form-result label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  background: #ddd;
+  color: #444;
+  border-radius: 5px 0 0 5px;
+  z-index: 2;
+  }
+  .form-result input {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 15px 10px 65px;
+  width: calc(100% - 80px);
+  background: #fff;
+  color: #444;
+  border: 1.5px solid #007bff;
+  outline: none;
+  border-radius: 5px;
+  }  
+  input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0} 
+  @media only screen and (max-width:460px){
+  .image-generate,.result-generate {
+  width: 100%;
+  min-width: 200px;
+  margin: auto;
+  text-align:center;
+  }  
+  }
+  </style>
+
+
+<div class="container box">
+     <div class='generator-whatsapp'>
+     <div class='form-wa'>
+     <label for='nama'>NAMA QR CODE BRAND</label>
+     <input id='nama' name='nama' placeholder='Nama QR Code Disini' type='text'/>
+     </div>
+     <div class='form-wa'>
+     <label for='nomor'>Nomor WA</label>
+     <input id='nomor' name='nomor' placeholder='Nomor WA Anda' type='number'/>
+     </div>
+     <div class='form-wa'>
+     <label for='pesan'>Pesan Teks</label>
+     <textarea id='pesan' name='pesan' placeholder='Tulis pesan disini'></textarea>
+     </div>
+     <button id='generate-wa'>Generate</button>
+     <div class='hasil-generate'>
+     <div class='image-generate'>
+     <div class='qrcode'>
+     <a href='#' id='link'>
+     <canvas id='canvas'></canvas>
+     </a>
+     </div>
+     <button id='download-qr'>Download QR</button>
+     </div>
+     <div class='result-generate'>
+     <div class='form-result'>
+     <label for='result'>Result</label>
+     <input id='result' name='result' readonly='readonly' type='text'/>
+     </div>
+     <button id='copy-link'>Copy</button>
+     <button id='test-link'>Test Link</button>
+     <button id='reset-qr'>Reset</button>
+     <div id='keterangan-tercopy'></div>
+     </div>
+     </div>
+     </div>
+     <script src='https://cdn.statically.io/gh/Azidzainuri/linku/e41aff40/qrcode.js '></script>
+     <script>
+     function getQR(str) {
+     var nomor = document.getElementById("nomor").value;
+     var nomorWA = nomor.split(/[^0-9]/).join("").replace(/^[0]/, "62");
+     var pesan = document.getElementById("pesan").value;
+     var teksPesan = encodeURIComponent(pesan);
+     var result = "https://api.whatsapp.com/send?phone="+nomorWA+"&text="+teksPesan;
+     var str = result;
+     document.getElementById("result").value = result;
+     QRCode.toCanvas(document.getElementById("canvas"), str, function(error) {
+     });
+     }
+     function copyLink(){
+     document.getElementById("result").select();
+     document.execCommand('copy');
+     document.getElementById("keterangan-tercopy").innerHTML = "Link berhasil disalin";
+     document.getElementById("keterangan-tercopy").style.margin = "10px 0";
+     }
+     function testLink(){
+     var teksLink = document.getElementById("result").value;
+     window.open(teksLink,'_blank');
+     }
+     function downloadQR(){
+     var link = document.getElementById("link");
+     var nama = document.getElementById("nama").value;
+     var titlePng = nama + ".png";
+     link.setAttribute('download', titlePng);
+     link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+     link.click();
+     }
+     function resetQR(){
+     window.location.href = window.location.href;
+     }
+     window.onload = function() {
+     document.getElementById("generate-wa").onclick = getQR, document.getElementById("copy-link").onclick = copyLink, document.getElementById("download-qr").onclick = downloadQR, document.getElementById("test-link").onclick = testLink, document.getElementById("reset-qr").onclick = resetQR;
+     };
+     </script>
+     
+  </div>
+  
+  
+  

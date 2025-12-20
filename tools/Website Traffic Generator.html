@@ -1,0 +1,71 @@
+# Traffic Website Generator Tool
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Generator Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #generator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div id="generator">
+    <h1>Website Traffic Generator</h1>
+    <label for="url">Enter your website URL:</label>
+    <input type="text" id="url" placeholder="https://example.com" />
+    <br><br>
+    <label for="visits">Number of visits:</label>
+    <input type="number" id="visits" placeholder="100" />
+    <br><br>
+    <button id="generate">Generate Traffic</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    document.getElementById('generate').addEventListener('click', function() {
+        const url = document.getElementById('url').value;
+        const visits = document.getElementById('visits').value;
+        const result = document.getElementById('result');
+
+        if (url && visits) {
+            result.textContent = `Generating ${visits} visits to ${url}...`;
+            // Simulate traffic generation
+            setTimeout(() => {
+                result.textContent = `Successfully generated ${visits} visits to ${url}!`;
+            }, 2000);
+        } else {
+            result.textContent = 'Please enter both URL and number of visits.';
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+
+Panduan Lengkap URL Kanonik (2024)
+
+
+URL Kanonik, adalah konsep yang digunakan dalam konteks situs web dan blog. Konsep ini berfungsi untuk mengatasi masalah URL duplikat dan mengelola masalah konten duplikat di situs web. Mari kita bahas berbagai aspek yang terkait dengan URL Kanonik, termasuk maknanya, pemeriksaan duplikat, masalah yang terkait dengan URL duplikat, manajemen konten, implikasi SEO, pentingnya, dan penggunaan tag.
+
+Jika Anda seorang blogger dengan situs web besar, Anda mungkin pernah mengalami masalah URL duplikat. Seiring bertambahnya ukuran situs, kemungkinan memiliki URL duplikat meningkat, yang menyebabkan masalah dengan konten duplikat di situs tersebut. Masalah ini dapat diatasi melalui URL Canonical. Mari kita cari tahu bagaimana Anda dapat mengatasi masalah ini jika Anda mengalaminya. Dalam artikel ini, kami akan memberi Anda semua informasi yang terkait dengan URL Canonical, jadi bacalah artikel ini dengan saksama hingga akhir.
+
+
+Daftar isi
+Apa itu URL Kanonik
+Bagaimana Google Mengidentifikasi URL Kanonik
+Data yang sama dan beberapa URL
+Cara mengidentifikasi URL Kanonik di situs web Anda
+Kapan Anda dapat mengarahkan ulang URL dan kapan Anda dapat menggunakan kanonisasi
+Tanya Jawab Umum
+1. Apa itu URL Kanonik?
+2. Bagaimana Cara Menggunakan URL Kanonik?
+3. Bagaimana Cara Memperbaiki Konten Duplikat Menggunakan Kanonisasi?
+4. Bagaimana cara menghapus URL Kanonik?
+5. Bagaimana cara membuat URL Kanonik dalam HTML?
+6. Bagaimana Cara Menemukan URL Kanonik Suatu Halaman?
+7. Kapan Menggunakan Pengalihan Alih-alih Kanonisasi?
+8. Bisakah URL Kanonik Melintasi Domain?
+9. Bagaimana Kanonisasi Mempengaruhi SEO?
+10. Apa yang Harus Dilakukan jika URL Kanonik Tidak Dipatuhi?
+Apa itu URL Kanonik
+Seiring dengan semakin besarnya situs, banyak halaman menjadi semakin mirip, dan menjadi tantangan untuk mencegah konten duplikat karena ukuran situs web. Jika dua halaman di situs sama dan telah mendapatkan tempat di peringkat untuk kata kunci tertentu, mesin pencari kesulitan menentukan halaman mana yang akan dituju. Untuk mengatasi masalah ini, Anda dapat memilih URL sesuai dengan preferensi Anda, dan ini disebut sebagai URL Kanonik.
+
+Bagaimana Google Mengidentifikasi URL Kanonik
+Jika halaman di situs Anda dapat diakses melalui beberapa URL, atau jika data yang sama ada di halaman yang berbeda, Google akan menganggapnya sebagai versi duplikat dari satu halaman. Misalnya, satu halaman mungkin memiliki versi terpisah untuk seluler dan desktop. Dalam kasus seperti itu, Google akan memilih satu URL sebagai URL Kanonis dan merayapinya, sementara URL lainnya akan dianggap sebagai URL duplikat, dan perayapan minimum dapat dilakukan pada URL tersebut.
+
+Lebih baik Anda menentukan URL Kanonik sendiri daripada mengandalkan Google untuk menentukannya. Jika Anda membuat URL Kanonik, Anda memiliki kontrol lebih besar atas prosesnya dan dapat memastikan bahwa Google mengenali URL Kanonik yang benar, sehingga terhindar dari kemungkinan Google memilih URL yang salah sebagai versi Kanonik.
+
+Data yang sama dan beberapa URL
+URL Kanonik adalah solusi teknis untuk konten duplikat. Misalnya, dalam salah satu posting Anda, Anda telah memilih dua kategori, dan ada dua URL yang terkait dengannya, seperti ini:
+
+https://abcd.com/kuning-shirt/kuning-dan-merah-shirt/
+https://abcd.com/red-shirt/kuning-dan-merah-shirt/
+Dalam kasus seperti itu, Anda dapat menggunakan URL Kanonik untuk menentukan URL mana yang kanonik atau utama. Ini membantu pengguna dan mesin pencari memahami bahwa kedua URL ini dimaksudkan untuk menampilkan konten yang sama, tetapi keduanya dapat diakses.
+
+Anda perlu mendeklarasikan salah satu URL ini sebagai versi kanonik menggunakan <link>tag di bagian kepala HTML, seperti ini:
+
+<head>
+  <link rel="canonical" href="https://abcd.com/yellow-shirt/yellow-and-red-shirt/" />
+</head>
+Hal ini memberi tahu pengguna dan mesin pencari bahwa halaman ini adalah halaman utama atau kanonik, dan URL lainnya harus dianggap memiliki konten duplikat. Hal ini membantu memastikan bahwa saat seseorang mencari, lalu lintas diarahkan ke URL yang benar, sehingga terhindar dari masalah dengan konten duplikat.
+
+Jika kedua URL ini tentang produk yang sama, Anda dapat memilih satu URL sebagai URL Kanonik dan memberi tahu Google Search Engine atau mesin pencari lainnya tentang URL mana yang akan ditampilkan dalam hasil pencarian.
+Dengan bantuan Canonical, Anda dapat mengarahkan mesin pencari ke versi asli artikel apa pun. Misalnya, jika Anda telah menulis postingan untuk orang lain, yang telah dipublikasikan di situs web mereka, dan Anda juga ingin mempublikasikan artikel yang sama di situs web Anda, Anda dapat membuatnya sebagai postingan asli dengan Canonical.
+Cara mengidentifikasi URL Kanonik di situs web Anda
+Mengidentifikasi URL kanonik pada situs web dapat dilakukan melalui berbagai metode. Berikut ini beberapa pendekatan umum:
+
+Lihat Sumber Halaman:
+Klik kanan pada halaman web dan pilih “Lihat Sumber Halaman” atau gunakan pintasan keyboard (Ctrl+U atau Command+Option+U).
+Cari <link>tag dengan atribut rel="canonical". Tag ini menentukan URL kanonik halaman saat ini.
+   <link rel="canonical" href="https://www.example.com/canonical-url" />
+Periksa Elemen (Alat Pengembang):
+Klik kanan pada halaman web dan pilih “Periksa” atau gunakan pintasan keyboard (Ctrl+Shift+I atau Command+Option+I) untuk membuka Alat Pengembang browser.
+Navigasi ke tab “Elemen” dan cari <link>tag dengan rel="canonical".
+Pemeriksaan Header HTTP:
+Anda juga dapat memeriksa header HTTP suatu halaman web untuk menemukan URL kanonik.
+Gunakan alat daring atau ekstensi browser yang menyediakan detail tentang header HTTP.
+Periksa di Robots.txt:
+Buka berkas situs web robots.txtdengan menambahkan /robots.txtke domain (misalnya, https://www.example.com/robots.txt).
+Cari arahan yang berkaitan dengan URL kanonik.
+   Sitemap: https://www.example.com/sitemap.xml
+   Canonical: https://www.example.com/canonical-url
+Plugin CMS atau SEO:
+Sistem Manajemen Konten (CMS) seperti WordPress sering menggunakan plugin yang memungkinkan pengelolaan URL kanonik secara mudah.
+Periksa pengaturan CMS atau plugin SEO Anda untuk mengidentifikasi atau menetapkan URL kanonik.
+Daftar di Google Search Console:
+Jika Anda memiliki akses ke Google Search Console untuk situs web tersebut, Anda dapat menemukan informasi tentang kanonisasi di bawah alat “Pemeriksaan URL”. Ingatlah bahwa URL kanonik adalah arahan bagi mesin pencari, dan ini membantu mereka memahami versi halaman yang disukai saat ada beberapa versi. Pastikan bahwa tag kanonik diterapkan dengan benar pada setiap halaman untuk menghindari masalah yang terkait dengan konten duplikat.
+Kapan Anda dapat mengarahkan ulang URL dan kapan Anda dapat menggunakan kanonisasi
+Anda dapat mengalihkan URL jika Anda ingin secara permanen mengarahkan lalu lintas dari satu URL ke URL lain, yang sering kali disebabkan oleh perubahan konten atau struktur situs. Ini berguna jika Anda ingin pengguna dan mesin pencari mengakses URL baru, bukan URL lama.
+
+Di sisi lain, kanonisasi digunakan saat Anda memiliki beberapa URL dengan konten yang serupa atau identik, dan Anda ingin menentukan versi yang disukai atau kanonik. Kanonisasi membantu mesin pencari memahami versi konten mana yang merupakan versi utama, sehingga mencegah masalah konten duplikat.
+
+Singkatnya:
+
+Mengalihkan URL saat Anda ingin mengirim lalu lintas dari URL lama ke URL baru secara permanen.
+Gunakan kanonisasi ketika Anda memiliki beberapa URL yang serupa dan ingin menentukan versi yang disukai untuk menghindari masalah konten duplikat.
+Tanya Jawab Umum
+Tentu saja! Berikut ini adalah daftar pertanyaan dan jawaban umum terkait URL Kanonik:
+
+1. Apa itu URL Kanonik?
+Jawaban: URL Kanonik merupakan URL pilihan atau utama suatu halaman, digunakan untuk menghindari masalah duplikat konten ketika beberapa URL mengarah ke konten yang sama atau serupa.
+2. Bagaimana Cara Menggunakan URL Kanonik?
+Jawaban: Untuk menggunakan URL Kanonik, tambahkan <link>tag rel="canonical"di bagian kepala HTML, yang menentukan URL pilihan. Contoh: <link rel="canonical" href="https://www.example.com/canonical-url" />.
+3. Bagaimana Cara Memperbaiki Konten Duplikat Menggunakan Kanonisasi?
+Jawaban: Identifikasi halaman konten duplikat dan tetapkan URL Kanonik untuk setiap halaman menggunakan <link>tag. Ini membantu mesin pencari memahami versi utama.
+4. Bagaimana cara menghapus URL Kanonik?
+Jawaban: Untuk menghapus URL Kanonik, hapus <link>tag dari bagian kepala HTML atau ubah URL Kanonik ke URL lain yang disukai.
+5. Bagaimana cara membuat URL Kanonik dalam HTML?
+Jawaban: Tambahkan tag berikut <link>di bagian kepala HTML:
+html <link rel="canonical" href="https://www.example.com/canonical-url" />
+6. Bagaimana Cara Menemukan URL Kanonik Suatu Halaman?
+Jawaban: Lihat sumber halaman atau periksa HTML halaman. Cari <link>tag dengan rel="canonical"untuk menemukan URL Kanonik.
+7. Kapan Menggunakan Pengalihan Alih-alih Kanonisasi?
+Jawaban: Gunakan pengalihan saat Anda ingin memindahkan konten secara permanen dari satu URL ke URL lain. Kanonisasi cocok untuk menangani konten duplikat dalam URL yang sama atau serupa.
+8. Bisakah URL Kanonik Melintasi Domain?
+Jawaban: Ya, URL Kanonik dapat digunakan untuk menentukan versi halaman yang disukai di berbagai domain, tetapi penting untuk memastikan bahwa kanonisasi lintas-domain sesuai dengan strategi SEO Anda.
+9. Bagaimana Kanonisasi Mempengaruhi SEO?
+Jawaban: Kanonisasi membantu mencegah masalah duplikat konten, meningkatkan SEO dengan menggabungkan sinyal peringkat untuk konten serupa di bawah URL Kanonik yang disukai.
+10. Apa yang Harus Dilakukan jika URL Kanonik Tidak Dipatuhi?
+- **Answer:** Ensure that Canonical URLs are correctly implemented in the HTML of each page. Check for typos or errors in the `<link>` tag and verify that the preferred URL is valid and accessible.
+Ingat, URL Kanonik memainkan peran penting dalam SEO, dan memahami cara menggunakannya secara efektif dapat berkontribusi pada situs web yang lebih optimal dan ramah pengguna.
+

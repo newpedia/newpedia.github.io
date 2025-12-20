@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> </title>
+
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <style type="text/css">
+ * {
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+ 
+ .home {
+ height: 100%;
+ padding-top: 20vh;
+ overflow: hidden;
+ -webkit-box-align: center;
+ -ms-flex-align: center;
+ align-items: center;
+ text-align: center;
+ background: white;
+   background-size: cover;
+ }
+ 
+ .home__name {
+ font-size: 5rem;
+ padding-bottom: 1rem;
+ margin-bottom: 1rem;
+ border-bottom: 2px solid #fff;
+ }
+ 
+ .home__name--last {
+ color: #ff652f;
+ font-weight: 700;
+ }
+ 
+ .menu-btn {
+ position: absolute;
+ z-index: 1;
+ right: 1rem;
+ top: 1rem;
+ height: 20px;
+ width: 28px;
+ cursor: pointer;
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .menu-btn__burger {
+ position: absolute;
+ right: 0;
+ top: 0.5rem;
+ width: 28px;
+ height: 3px;
+ background: grey;
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .menu-btn__burger::before {
+ content: '';
+ position: absolute;
+ top: -8px;
+ width: 28px;
+ height: 3px;
+ background: grey;
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .menu-btn__burger::after {
+ content: '';
+ position: absolute;
+ top: 8px;
+ width: 20px;
+ height: 3px;
+ background: grey;
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .menu-btn__burger.open {
+ -webkit-transform: rotate(720deg);
+ transform: rotate(720deg);
+ background: transparent;
+ }
+ 
+ .menu-btn__burger.open::before {
+ -webkit-transform: rotate(45deg) translate(5px, 8px);
+ transform: rotate(45deg) translate(5px, 8px);
+ }
+ 
+ .menu-btn__burger.open::after {
+ width: 28px;
+ -webkit-transform: rotate(-45deg) translate(3px, -7px);
+ transform: rotate(-45deg) translate(3px, -7px);
+ }
+ 
+ .nav {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ opacity: 0.98;
+ visibility: hidden;
+ }
+ 
+ .nav.open {
+ visibility: visible;
+ }
+ 
+ .nav .menu-nav {
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -ms-flex-flow: column wrap;
+ flex-flow: column wrap;
+ -webkit-box-align: center;
+ -ms-flex-align: center;
+ align-items: center;
+ -webkit-box-pack: center;
+ -ms-flex-pack: center;
+ justify-content: center;
+ height: 100vh;
+ overflow: hidden;
+ background: dodgerblue;
+ list-style-type: none;
+ padding-right: 1rem;
+ -webkit-transform: translateY(-100%);
+ transform: translateY(-100%);
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .nav .menu-nav.open {
+ -webkit-transform: translateY(0);
+ transform: translateY(0);
+ }
+ 
+ .nav .menu-nav__item {
+ -webkit-transform: translateX(100vw);
+ transform: translateX(100vw);
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .nav .menu-nav__item.open {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+ }
+ 
+ .nav .menu-nav__item.active > a {
+ color: #ff652f;
+ }
+ 
+ .nav .menu-nav__link {
+ display: inline-block;
+ font-size: 2rem;
+ text-transform: uppercase;
+ padding: 2rem 0;
+ font-weight: 300;
+ -webkit-transition: all 0.5s ease-in-out;
+ transition: all 0.5s ease-in-out;
+ }
+ 
+ .nav .menu-nav__link:hover {
+ color: #ff652f;
+ }
+ 
+ .menu-nav__item:nth-child(1) {
+ -webkit-transition-delay: 0.25s;
+ transition-delay: 0.25s;
+ }
+ 
+ .menu-nav__item:nth-child(2) {
+ -webkit-transition-delay: 0.35s;
+ transition-delay: 0.35s;
+ }
+ 
+ .menu-nav__item:nth-child(3) {
+ -webkit-transition-delay: 0.45s;
+ transition-delay: 0.45s;
+ }
+ 
+ .menu-nav__item:nth-child(4) {
+ -webkit-transition-delay: 0.55s;
+ transition-delay: 0.55s;
+ }
+ 
+ .projects footer {
+ -webkit-transform: rotate(90deg) translate(-3rem, -5rem);
+ transform: rotate(90deg) translate(-3rem, -5rem);
+ }
+ 
+ 
+ @media screen and (min-width: 768px) {
+ .menu-btn {
+ visibility: hidden;
+ }
+ .nav {
+ visibility: visible;
+ }
+ .nav .menu-nav {
+ display: block;
+ -webkit-transform: translateY(0);
+ transform: translateY(0);
+ height: 100%;
+ background: white;
+ text-align: right;
+ }
+ .nav .menu-nav__item {
+ display: inline;
+ padding-right: 1.5rem;
+ }
+ .nav .menu-nav__link {
+ font-size: 1.5rem;
+ }
+ 
+ }
+ 
+ body {
+ background: black;
+ color: white;
+ height: 100vh;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ line-height: 1;
+ }
+ 
+ h1, h2, h3 {
+ font-weight: 400;
+ }
+ 
+ a {
+ color: #fff;
+ text-decoration: none;
+ }
+ 
+ .text-secondary {
+ color: #ff652f;
+ }
+ 
+ header {
+ position: fixed;
+ z-index: 2;
+ width: 100%;
+ padding: 1rem;
+ }
+ 
+ main {
+ height: 100%;
+ width: 100%;
+ }
+ 
+ 
+ footer {
+ font-size: 1rem;
+ position: fixed;
+ bottom: 0.4rem;
+ right: 1rem;
+ text-align: right;
+ padding: 1rem;
+ color: black;
+ }
+ /*# sourceMappingURL=main.css.map */
+  </style>
+
+
+</head>
+<body>
+	
+  <header> 
+  <a href="index.html" class="logo me-auto"><img src="https://awdev.my.id/favicon.png" alt="AWDEV"  width="70" height="50" class="img-fluid"></a>
+    
+    <div class="menu-btn">
+      <span class="menu-btn__burger">      
+      </span>
+       
+   
+    </div>
+    <nav class="nav">
+   <ul class="menu-nav">
+        <li class="menu-nav__item active">
+        <a href="index.html" class="menu-nav__link">
+        Home
+        </a>
+        </li>
+        <li class="menu-nav__item">
+        <a href="https://www.alhikmah.my.id/p/al-hikmah-center.html/" class="menu-nav__link">
+        DASHBOARD
+        </a>
+        </li>
+        <li class="menu-nav__item">
+        <a href="https://www.alhikmah.my.id/p/al-quran.html" class="menu-nav__link">
+        ISLAMIC
+        </a>
+        </li>
+        <li class="menu-nav__item">
+        <a href="https://www.alhikmah.my.id/p/daftar-campaign-affiliasi-website-kami.html" class="menu-nav__link">
+        AFFILIASI      
+        </a>
+        </li>
+        <li class="menu-nav__item">
+        <a href="https://awdev.my.id" class="menu-nav__link">
+        BLUID TEMPLATES
+        </a>
+        </li>
+        <li class="menu-nav__item">
+        <a href="https://awdev.my.id" class="menu-nav__link">
+        LOGIN           
+        </a>        
+        </li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="home">
+       
+      
+      <div class="cards">
+      <div class="card">
+      <form method="get" action="https://www.google.com/search?q=mikrodinet.eu.org">
+      <div>
+      <a href="https://us.mikrodinet.eu.org"> 
+      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png " style="height:30px;padding-bottom:5px;">
+      </a>
+      </div>
+      <input size="20" name="q" placeholder="Search">  
+      <input type="submit" value="Search"> 
+      <div>
+      <input type="radio" name="site" value="" checked="checked"> search the web
+      </div>
+      </form>
+      
+      
+      </div>
+      <div class="card">
+      <form method="get" action="https://www.mojeek.com/search">
+      <div>
+      <a href="https://us.mikrodinet.eu.org"> 
+      <img src="https://www.mojeek.com/logos/logo_cc.svg" style="height:30px;padding-bottom:5px;">
+      </a>
+      </div>
+      <input size="20" name="q" placeholder="Search with Mojeek">  
+      <input type="submit" value="Search"> 
+      <div>
+      <input type="radio" name="site" value="" checked="checked"> search the web
+      </div>
+      </form>
+      
+      </div>
+      
+      
+      <div class="card">
+      <form method="get" action="https://yep.com/web?q=mikrodinet.eu.org">
+      <div>
+      <a href="https://us.mikrodinet.eu.org"> 
+      <img src="https://sweetrosestudios.com/wp-content/uploads/2022/10/yep.png " style="height:30px;padding-bottom:5px;">
+      </a>
+      </div>
+      <input size="20" name="q" placeholder="Search">  
+      <input type="submit" value="Search"> 
+      <div>
+      <input type="radio" name="site" value="" checked="checked"> search the web
+      </div>
+      </form>
+      </div>
+      
+      
+      
+      
+      <footer>&copy; Copyright 2021</footer>
+    </section>
+  </main>
+<script type="text/javascript">
+ const menuBtn = document.querySelector('.menu-btn');
+ const hamburger = document.querySelector('.menu-btn__burger');
+ const nav = document.querySelector('.nav');
+ const menuNav = document.querySelector('.menu-nav');
+ const navItems = document.querySelectorAll('.menu-nav__item');
+ 
+ let showMenu = false;
+ 
+ menuBtn.addEventListener('click', toggleMenu);
+ 
+ function toggleMenu() {
+ if(!showMenu) {
+ hamburger.classList.add('open');
+ nav.classList.add('open');
+ menuNav.classList.add('open');
+ navItems.forEach(item => item.classList.add('open'));
+ 
+ showMenu = true;
+ } else {
+ hamburger.classList.remove('open');
+ nav.classList.remove('open');
+ menuNav.classList.remove('open');
+ navItems.forEach(item => item.classList.remove('open'));
+ 
+ showMenu = false;
+ }
+ }
+ </script>
+ 
+  
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Checker Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        #urlInput {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        #checkButton {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Duplicate Checker Tool</h1>
+    <input type="text" id="urlInput" placeholder="Enter URL to check for duplicates">
+    <button id="checkButton">Check for Duplicates</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('checkButton').addEventListener('click', function() {
+            const url = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+
+            // Simulated duplicate check
+            const duplicates = ['http://example.com', 'http://test.com']; // Example duplicate URLs
+            if (duplicates.includes(url)) {
+                resultDiv.innerHTML = `<p style="color: red;">Duplicate found: ${url}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color: green;">No duplicates found for: ${url}</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Modern QR WhatsApp Generator</title>
+
+<!-- =======================
+      MODERN CSS
+======================= -->
+<style>
+:root {
+  --primary: #0066ff;
+  --primary-hover: #0052d6;
+  --success: #27ae60;
+  --success-hover: #1e8e4d;
+  --bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --radius: 10px;
+  --shadow: 0 8px 25px rgba(0,0,0,0.08);
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 20px;
+}
+
+.generator-whatsapp {
+  max-width: 850px;
+  margin: auto;
+  padding: 25px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.generator-whatsapp h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #222;
+}
+
+.form-wa {
+  margin-bottom: 18px;
+}
+
+.form-wa label {
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.form-wa input,
+.form-wa textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: 1.5px solid #d5d9e0;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-wa input:focus,
+.form-wa textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,102,255,0.15);
+}
+
+button {
+  cursor: pointer;
+}
+
+#generate-wa {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+#generate-wa:hover {
+  background: var(--primary-hover);
+}
+
+.hasil-generate {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.image-generate,
+.result-generate {
+  flex: 1 1 350px;
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.qrcode canvas {
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 10px;
+  background: #eaeaea;
+}
+
+.result-generate button,
+#download-qr,
+#copy-shortlink {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.result-generate button:hover,
+#download-qr:hover {
+  background: var(--primary-hover);
+}
+
+#copy-shortlink {
+  background: var(--success);
+}
+#copy-shortlink:hover {
+  background: var(--success-hover);
+}
+
+.form-result label {
+  font-size: 11px;
+  font-weight: bold;
+  color: white;
+  background: var(--primary);
+  padding: 4px 10px;
+  border-radius: 6px 6px 0 0;
+  display: inline-block;
+}
+
+.form-result input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 0 0 8px 8px;
+  border: 1.5px solid #d5d9e0;
+  font-size: 13px;
+}
+
+#keterangan-tercopy {
+  margin-top: 5px;
+  font-size: 12px;
+  color: green;
+  font-weight: bold;
+  display: none;
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- =======================
+      HTML BODY
+======================= -->
+<div class="generator-whatsapp">
+  <h2>Modern WhatsApp QR Generator</h2>
+
+  <div class="form-wa">
+    <label for="nama">Nama QR Code</label>
+    <input id="nama" placeholder="Nama file QR" type="text">
+  </div>
+
+  <div class="form-wa">
+    <label for="nomor">Nomor WhatsApp</label>
+    <input id="nomor" placeholder="628xxxx" type="text">
+  </div>
+
+  <div class="form-wa">
+    <label for="pesan">Pesan WhatsApp</label>
+    <textarea id="pesan" placeholder="Tulis pesan Anda..."></textarea>
+  </div>
+
+  <button id="generate-wa">Generate QR</button>
+
+  <div class="hasil-generate">
+    
+    <div class="image-generate">
+      <div class="qrcode" id="canvas"></div>
+      <button id="download-qr">Download QR</button>
+    </div>
+
+    <div class="result-generate">
+
+      <div class="form-result">
+        <label>Generated Link</label>
+        <input id="result" readonly>
+      </div>
+
+      <div class="form-result" style="margin-top:15px;">
+        <label>Shortlink</label>
+        <input id="shortlink" readonly>
+      </div>
+
+      <button id="copy-link">Copy Link</button>
+      <button id="copy-shortlink">Copy Shortlink</button>
+      <button id="test-link">Test Link</button>
+      <button id="reset-qr">Reset</button>
+
+      <div id="keterangan-tercopy">Tersalin!</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- QR LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+<!-- =======================
+      JAVASCRIPT FULL
+======================= -->
+<script>
+
+// Generate SHORTLINK via TinyURL
+function generateShortlink(longUrl) {
+    fetch("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(longUrl))
+    .then(res => res.text())
+    .then(short => {
+        document.getElementById("shortlink").value = short;
+    })
+    .catch(() => {
+        document.getElementById("shortlink").value = "Gagal membuat shortlink!";
+    });
+}
+
+// Generate QR WhatsApp
+function getQR() {
+
+    let nomor = document.getElementById("nomor").value.trim();
+    let pesan = document.getElementById("pesan").value;
+    let nama  = document.getElementById("nama").value;
+
+    if (nomor === "") {
+        alert("Nomor WA tidak boleh kosong!");
+        return;
+    }
+
+    let nomorWA = nomor.replace(/[^0-9]/g, "").replace(/^0/, "62");
+    let teksPesan = encodeURIComponent(pesan + "\nUmkm Naik Kelas oleh www.awdev.my.id Sukses Bersama!");
+    let urlWA = "https://api.whatsapp.com/send?phone=" + nomorWA + "&text=" + teksPesan;
+
+    document.getElementById("result").value = urlWA;
+
+    // BUAT SHORTLINK
+    generateShortlink(urlWA);
+
+    // Hapus QR lama
+    document.getElementById("canvas").innerHTML = "";
+
+    // Generate QR
+    new QRCode(document.getElementById("canvas"), {
+        text: urlWA,
+        width: 200,
+        height: 200
+    });
+}
+
+// Copy Link
+function copyLink(){
+    navigator.clipboard.writeText(document.getElementById("result").value);
+    let notif = document.getElementById("keterangan-tercopy");
+    notif.innerHTML = "Link berhasil disalin!";
+    notif.style.display = "block";
+}
+
+// Copy Shortlink
+function copyShortlink(){
+    navigator.clipboard.writeText(document.getElementById("shortlink").value);
+    let notif = document.getElementById("keterangan-tercopy");
+    notif.innerHTML = "Shortlink berhasil disalin!";
+    notif.style.display = "block";
+}
+
+// Test Link
+function testLink(){
+    let url = document.getElementById("result").value;
+    if(url) window.open(url, "_blank");
+}
+
+// Download QR
+function downloadQR(){
+    let canvas = document.querySelector("#canvas canvas");
+
+    if (!canvas) {
+        alert("QR belum dibuat!");
+        return;
+    }
+
+    let nama = document.getElementById("nama").value || "qr_whatsapp";
+
+    let link = document.createElement("a");
+    link.download = nama + ".png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+}
+
+// Reset Halaman
+function resetQR(){
+    location.reload();
+}
+
+// Event Binding
+window.onload = function(){
+    document.getElementById("generate-wa").onclick = getQR;
+    document.getElementById("copy-link").onclick = copyLink;
+    document.getElementById("copy-shortlink").onclick = copyShortlink;
+    document.getElementById("download-qr").onclick = downloadQR;
+    document.getElementById("test-link").onclick = testLink;
+    document.getElementById("reset-qr").onclick = resetQR;
+};
+
+</script>
+
+</body>
+</html>

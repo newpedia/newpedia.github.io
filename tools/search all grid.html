@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+html { font-size: 22px; }
+body { padding: 1rem;
+ background-color: dodgerblue;
+ }
+
+
+.card {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+</style>
+</head>
+<body>
+
+    <div class="cards">
+    <div class="card">
+    <form method="get" action="https://www.google.com/search?q=mikrodinet.eu.org">
+    <div>
+    <a href="https://us.mikrodinet.eu.org"> 
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png " style="height:30px;padding-bottom:5px;">
+    </a>
+    </div>
+    <input size="20" name="q" placeholder="Search">  
+    <input type="submit" value="Search"> 
+    <div>
+    <input type="radio" name="site" value="" checked="checked"> search the web
+    </div>
+    </form>
+    
+    
+    </div>
+    <div class="card">
+    <form method="get" action="https://www.mojeek.com/search">
+    <div>
+    <a href="https://us.mikrodinet.eu.org"> 
+    <img src="https://www.mojeek.com/logos/logo_cc.svg" style="height:30px;padding-bottom:5px;">
+    </a>
+    </div>
+    <input size="20" name="q" placeholder="Search with Mojeek">  
+    <input type="submit" value="Search"> 
+    <div>
+    <input type="radio" name="site" value="" checked="checked"> search the web
+    </div>
+    </form>
+    
+    </div>
+    
+    
+    <div class="card">
+    <form method="get" action="https://yep.com/web?q=mikrodinet.eu.org">
+    <div>
+    <a href="https://us.mikrodinet.eu.org"> 
+    <img src="https://sweetrosestudios.com/wp-content/uploads/2022/10/yep.png " style="height:30px;padding-bottom:5px;">
+    </a>
+    </div>
+    <input size="20" name="q" placeholder="Search">  
+    <input type="submit" value="Search"> 
+    <div>
+    <input type="radio" name="site" value="" checked="checked"> search the web
+    </div>
+    </form>
+    </div>
+    <div class="card">FOUR</div>
+    <div class="card">FIVE</div>
+    <div class="card">SIX</div>
+    <div class="card">SEVEN</div>
+    <div class="card">EIGHT</div>
+    <div class="card">NINE</div>
+    <div class="card">TEN</div>
+    <div class="card">ELEVEN</div>
+    <div class="card">TWELVE</div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Generator</title>
+    <script>
+        function generatePhoneNumber() {
+            const areaCode = Math.floor(Math.random() * 900) + 100;
+            const centralOfficeCode = Math.floor(Math.random() * 900) + 100;
+            const lineNumber = Math.floor(Math.random() * 9000) + 1000;
+            return `(${areaCode}) ${centralOfficeCode}-${lineNumber}`;
+        }
+
+        function displayPhoneNumber() {
+            const phoneNumber = generatePhoneNumber();
+            document.getElementById('phone-number').innerText = phoneNumber;
+        }
+    </script>
+</head>
+<body>
+    <h1>Phone Number Generator</h1>
+    <button onclick="displayPhoneNumber()">Generate Phone Number</button>
+    <p id="phone-number"></p>
+</body>
+</html>

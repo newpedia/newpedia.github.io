@@ -1,0 +1,58 @@
+# Script Html CSS js from engine dengan option 100 url search engine
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Query Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Engine Query</h1>
+    <input type="text" id="searchQuery" placeholder="Enter your search query">
+    <button onclick="search()">Search</button>
+    <div class="results" id="results"></div>
+
+    <script>
+        function search() {
+            const query = document.getElementById('searchQuery').value;
+            const searchEngines = [
+                'https://www.google.com/search?q=',
+                'https://www.bing.com/search?q=',
+                'https://search.yahoo.com/search?p=',
+                'https://www.duckduckgo.com/?q=',
+                'https://www.ask.com/web?q=',
+                'https://www.aol.com/search?q=',
+                'https://www.startpage.com/do/search?q=',
+                'https://www.qwant.com/?q=',
+                'https://www.ecosia.org/search?q=',
+                'https://www.yandex.com/search/?text='
+            ];
+
+            let resultsHtml = '<h2>Search Results:</h2><ul>';
+            searchEngines.forEach(engine => {
+                resultsHtml += `<li><a href="${engine}${encodeURIComponent(query)}" target="_blank">${engine}${encodeURIComponent(query)}</a></li>`;
+            });
+            resultsHtml += '</ul>';
+            document.getElementById('results').innerHTML = resultsHtml;
+        }
+    </script>
+</body>
+</html>

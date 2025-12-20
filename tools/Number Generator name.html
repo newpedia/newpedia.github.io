@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Random Number Generator</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+
+
+    </head>
+
+
+<body>
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+    <a class="navbar-brand" href="/">
+        <i class="bi-file-richtext"></i>
+        docconvert
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i class="bi-file-text"></i>
+                    Documents
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/random">
+                    <i class="bi-dice-6"></i>
+                    Random
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/alexcoder04/docconvert" target="_blank">
+                    <i class="bi-github"></i>
+                    GitHub
+                    <i class="bi-box-arrow-up-right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+
+<main class="container-fluid mt-3">
+    <div class="container mt-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#number">
+                    <i class="bi-calculator"></i>
+                    Number
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#name">
+                    <i class="bi-emoji-sunglasses"></i>
+                    Name
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="number">
+                <h2>Random Number Generator</h2>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="minNumber" class="form-label">Minimum Number:</label>
+                        <input type="number" class="form-control" id="minNumber" min="0" value="1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="maxNumber" class="form-label">Maximum Number:</label>
+                        <input type="number" class="form-control" id="maxNumber" min="0" value="6">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-lg mb-3" id="generateNumber">
+                    <i class="bi-shuffle"></i>
+                    Generate Number
+                </button>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="generatedNumber" readonly>
+                    <button class="btn btn-outline-primary" type="button" id="copyButton">
+                        <i class='bi-clipboard'></i>
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="name">
+                <div class="row mb-3">
+                    <div class="col">
+                        <h2>Pick Random Name</h2>
+                        <ul id="name-list" class="list-group"></ul>
+                      </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input id="new-name" type="text" class="form-control" placeholder="Enter a new name...">
+                            <button id="add-name" class="btn btn-primary">
+                                <i class="bi-plus-square"></i>
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <button id="pick-random" class="btn btn-success">
+                            <i class="bi-shuffle"></i>
+                            Pick a Random Name
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="pickedName" readonly>
+                    <button class="btn btn-outline-primary" type="button" id="copyNameButton">
+                        <i class='bi-clipboard'></i>
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script type="text/javascript">
+
+const imageUploadInput = document.getElementById("imageUpload");
+const progressBar = document.getElementById("image-upload-progress");
+
+imageUploadInput.onchange = () => {
+    progressBar.style.width = "0%";
+    setTimeout(() => {
+        const xhr = new XMLHttpRequest();
+        progressBar.classList.add("progress-bar-striped");
+        progressBar.classList.remove("bg-success");
+        xhr.addEventListener("progress", e => {
+            progressBar.style.width = (e.loaded / e.total * 100) + "%";
+        });
+        xhr.addEventListener("load", () => {
+            setTimeout(() => {
+                progressBar.classList.remove("progress-bar-striped");
+                progressBar.classList.add("bg-success");
+            }, 500);
+        });
+        xhr.open("POST", "/imageupload");
+        const formData = new FormData();
+        formData.append("file", imageUploadInput.files[0]);
+        xhr.send(formData);
+    }, 500);
+};
+</script>
+<script type="text/javascript">
+
+const copyOriginalBtn = document.getElementById("btn-copy-original");
+const copyChatGptBtn = document.getElementById("btn-copy-chatgpt");
+
+addCopyFunction(copyOriginalBtn, () => {
+    return document.getElementById("myText").value;
+});
+
+addCopyFunction(copyChatGptBtn, () => {
+    const text = document.getElementById("myText").value;
+    if (text.trim() == "") {
+        return "";
+    }
+    return `Please summarize the following text:\n${text}`;
+});
+
+function downloadTxt() {
+    const text = document.getElementById("myText").value;
+    const element = document.createElement("a");
+    element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute("download", "yourtext.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+</script>
+<script type="text/javascript">
+
+// NUMBERS
+const generateNumberButton = document.getElementById("generateNumber");
+const minNumberInput = document.getElementById("minNumber");
+const maxNumberInput = document.getElementById("maxNumber");
+const generatedNumberInput = document.getElementById("generatedNumber");
+const copyButton = document.getElementById("copyButton");
+
+generateNumberButton.addEventListener("click", function() {
+    const minNumber = parseInt(minNumberInput.value);
+    const maxNumber = parseInt(maxNumberInput.value);
+    const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    generatedNumberInput.value = randomNumber;
+
+    generatedNumberInput.classList.add("is-valid");
+    setTimeout(() => {
+        generatedNumberInput.classList.remove("is-valid");
+    }, 1000);
+});
+
+addCopyFunction(copyButton, () => {
+    return generatedNumberInput.value;
+});
+
+
+// NAMES
+const newNameInput = document.getElementById("new-name");
+const addNameButton = document.getElementById("add-name");
+const nameList = document.getElementById("name-list");
+const randomNameDisplay = document.getElementById("pickedName");
+const pickRandomButton = document.getElementById("pick-random");
+const copyNameButton = document.getElementById("copyNameButton");
+
+newNameInput.addEventListener("keydown", (event) => {
+    if (event.key == "Enter") {
+        addNameButton.click();
+        return;
+    }
+});
+
+function addNameToDOM(name) {
+    const newNameItem = document.createElement("li");
+    newNameItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+    const newNameText = document.createElement("span");
+    newNameText.textContent = name;
+    const removeNameButton = document.createElement("button");
+    removeNameButton.classList.add("btn", "btn-danger", "btn-sm", "remove-name-button");
+    removeNameButton.innerHTML = "<i class='bi-trash'></i> Remove";
+    newNameItem.appendChild(newNameText);
+    newNameItem.appendChild(removeNameButton);
+    nameList.appendChild(newNameItem);
+    newNameInput.value = "";
+}
+
+addNameButton.addEventListener("click", () => {
+    const newName = newNameInput.value.trim();
+    if (newName) {
+        addNameToDOM(newName);
+        lsArrAdd("names", newName);
+    }
+});
+
+nameList.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        lsArrRemove("names", event.target.parentElement.querySelector("span").textContent);
+        event.target.parentElement.remove();
+    }
+});
+
+pickRandomButton.addEventListener("click", () => {
+    const nameItems = nameList.querySelectorAll("li");
+    const randomIndex = Math.floor(Math.random() * nameItems.length);
+    randomNameDisplay.value = nameItems[randomIndex].querySelector("span").textContent;
+});
+
+
+addCopyFunction(copyNameButton, () => {
+    return randomNameDisplay.value;
+});
+
+lsArrGetFull("names").forEach(name => {
+    addNameToDOM(name);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+# Job Search Tool
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            max-width: 300px;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Search Tool</h1>
+    <form id="jobSearchForm">
+        <input type="text" id="jobTitle" placeholder="Enter job title" required>
+        <input type="submit" value="Search">
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('jobSearchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const jobTitle = document.getElementById('jobTitle').value;
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2>Results for "${jobTitle}":</h2>`;
+            // Simulated job search results
+            const jobs = [
+                { title: 'Software Engineer', company: 'Tech Corp' },
+                { title: 'Web Developer', company: 'Web Solutions' },
+                { title: 'Data Analyst', company: 'Data Insights' }
+            ];
+            jobs.forEach(job => {
+                resultsDiv.innerHTML += `<p>${job.title} at ${job.company}</p>`;
+            });
+        });
+    </script>
+
+</body>
+</html>

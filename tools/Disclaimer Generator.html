@@ -1,0 +1,64 @@
+# Disclaimer Generator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Disclaimer Generator</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name"><br>
+
+    <label for="url">Website URL:</label>
+    <input type="text" id="url" placeholder="Enter your website URL"><br>
+
+    <label for="gmail">Gmail:</label>
+    <input type="email" id="gmail" placeholder="Enter your Gmail"><br>
+
+    <label for="no_hp">Phone Number:</label>
+    <input type="text" id="no_hp" placeholder="Enter your phone number"><br>
+
+    <button onclick="generateDisclaimer()">Generate Disclaimer</button>
+
+    <h2>Generated Disclaimer:</h2>
+    <textarea id="disclaimerText" readonly></textarea>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function generateDisclaimer() {
+            const name = document.getElementById('name').value;
+            const url = document.getElementById('url').value;
+            const gmail = document.getElementById('gmail').value;
+            const no_hp = document.getElementById('no_hp').value;
+
+            const disclaimer = `Disclaimer: The information provided by ${name} on ${url} is for general informational purposes only. All information on the site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the site. For inquiries, please contact us at ${gmail} or call ${no_hp}.`;
+            
+            document.getElementById('disclaimerText').value = disclaimer;
+        }
+
+        function copyToClipboard() {
+            const disclaimerText = document.getElementById('disclaimerText');
+            disclaimerText.select();
+            document.execCommand('copy');
+            alert('Disclaimer copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

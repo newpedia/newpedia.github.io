@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous" defer></script>
+
+    <script src="https://alexcoder04.github.io/ac04.js/tabs.js" defer></script>
+    <script src="https://alexcoder04.github.io/ac04.js/copy.js" defer></script>
+    <script src="https://alexcoder04.github.io/static/image.js" defer></script>
+    <script src="https://alexcoder04.github.io/static/img2text.js" defer></script>
+</head>
+
+
+<body>
+    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <i class="bi-file-richtext"></i>
+            docconvert
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi-file-text"></i>
+                        Documents
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/random">
+                        <i class="bi-dice-6"></i>
+                        Random
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/alexcoder04/docconvert" target="_blank">
+                        <i class="bi-github"></i>
+                        GitHub
+                        <i class="bi-box-arrow-up-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container-fluid mt-3">
+    <div class="container mt-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#documents">
+                    <i class="bi-file-text"></i>
+                    Documents
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#images">
+                    <i class="bi-image"></i>
+                    Images
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#image2text">
+                    <i class="bi-file-break"></i>
+                    Image-To-Text
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="documents">
+                <h2>Convert documents</h2>
+                <form method="post" action="/convert/upload" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="fromtype" class="form-label">Input File Type</label>
+                        <select class="form-select form-control" id="inputFileType" name="fromtype">
+                            <option value="txt">Text (.txt)</option>
+                            <option value="odt">OpenDocument Text (LibreOffice, .odt)</option>
+                            <option value="docx">Microsoft Word (.docx)</option>
+                            <option value="html">HTML (.html)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="totype" class="form-label">Output File Type</label>
+                        <select class="form-select form-control" id="outputFileType" name="totype">
+                            <option value="odt">OpenDocument Text (LibreOffice, .odt)</option>
+                            <option value="docx">Microsoft Word (.docx)</option>
+                            <option value="html">HTML (.html)</option>
+                            <option value="txt">Text (.txt)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fileInput" class="form-label">Select File</label>
+                        <input class="form-control" type="file" id="fileInput" name="file" accept=".txt,.docx,.odt,.html">
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi-gear-wide-connected"></i>
+                        Convert
+                    </button>
+                </form>
+            </div>
+
+            <div class="tab-pane fade" id="images">
+                <h2>Convert images</h2>
+                <div class="mb-3">
+                    <label for="imageUpload" class="form-label">Upload an image</label>
+                    <input type="file" class="form-control" id="imageUpload" accept=".png,.jpg,.jpeg,.webp">
+                </div>
+                <div class="progress mb-3">
+                    <div class="progress-bar" id="image-upload-progress" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="totype" class="form-label">Output Format</label>
+                    <select class="form-select form-control" id="outputFileType" name="totype">
+                        <option value="png">PNG</option>
+                        <option value="jpg">JPG</option>
+                        <option value="webp">WEBP</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-success">Convert</button>
+            </div>
+
+            <div class="tab-pane fade" id="image2text">
+                <h2>Extract text from images</h2>
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="image" name="image" accept=".png,.jpg,.jpeg,.webp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="language" class="form-label">Language</label>
+                        <select class="form-select form-control" id="language" name="language">
+                            <option value="eng">English</option>
+                            <option value="deu">German</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi-binoculars"></i>
+                        Detect
+                    </button>
+                </form>
+                <div class="col-md-8 w-100">
+                    <div class="form-group">
+                        <textarea class="form-control my-3" id="myText" rows="10" placeholder="Detected text will appear here" readonly>{{.text}}</textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-success" id="btn-copy-original">
+                            <i class="bi-clipboard"></i>
+                            Copy original text
+                        </button>
+                        <button class="btn btn-primary" id="btn-copy-chatgpt">
+                            <i class="bi-clipboard"></i>
+                            Copy ChatGPT summarize prompt
+                        </button>
+                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi-download"></i>
+                            Download
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#" onclick="downloadTxt()">Download .txt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript">
+
+const imageUploadInput = document.getElementById("imageUpload");
+const progressBar = document.getElementById("image-upload-progress");
+
+imageUploadInput.onchange = () => {
+    progressBar.style.width = "0%";
+    setTimeout(() => {
+        const xhr = new XMLHttpRequest();
+        progressBar.classList.add("progress-bar-striped");
+        progressBar.classList.remove("bg-success");
+        xhr.addEventListener("progress", e => {
+            progressBar.style.width = (e.loaded / e.total * 100) + "%";
+        });
+        xhr.addEventListener("load", () => {
+            setTimeout(() => {
+                progressBar.classList.remove("progress-bar-striped");
+                progressBar.classList.add("bg-success");
+            }, 500);
+        });
+        xhr.open("POST", "/imageupload");
+        const formData = new FormData();
+        formData.append("file", imageUploadInput.files[0]);
+        xhr.send(formData);
+    }, 500);
+};
+</script>
+<script type="text/javascript">
+
+const copyOriginalBtn = document.getElementById("btn-copy-original");
+const copyChatGptBtn = document.getElementById("btn-copy-chatgpt");
+
+addCopyFunction(copyOriginalBtn, () => {
+    return document.getElementById("myText").value;
+});
+
+addCopyFunction(copyChatGptBtn, () => {
+    const text = document.getElementById("myText").value;
+    if (text.trim() == "") {
+        return "";
+    }
+    return `Please summarize the following text:\n${text}`;
+});
+
+function downloadTxt() {
+    const text = document.getElementById("myText").value;
+    const element = document.createElement("a");
+    element.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    element.setAttribute("download", "yourtext.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+</script>
+<script type="text/javascript">
+
+// NUMBERS
+const generateNumberButton = document.getElementById("generateNumber");
+const minNumberInput = document.getElementById("minNumber");
+const maxNumberInput = document.getElementById("maxNumber");
+const generatedNumberInput = document.getElementById("generatedNumber");
+const copyButton = document.getElementById("copyButton");
+
+generateNumberButton.addEventListener("click", function() {
+    const minNumber = parseInt(minNumberInput.value);
+    const maxNumber = parseInt(maxNumberInput.value);
+    const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    generatedNumberInput.value = randomNumber;
+
+    generatedNumberInput.classList.add("is-valid");
+    setTimeout(() => {
+        generatedNumberInput.classList.remove("is-valid");
+    }, 1000);
+});
+
+addCopyFunction(copyButton, () => {
+    return generatedNumberInput.value;
+});
+
+
+// NAMES
+const newNameInput = document.getElementById("new-name");
+const addNameButton = document.getElementById("add-name");
+const nameList = document.getElementById("name-list");
+const randomNameDisplay = document.getElementById("pickedName");
+const pickRandomButton = document.getElementById("pick-random");
+const copyNameButton = document.getElementById("copyNameButton");
+
+newNameInput.addEventListener("keydown", (event) => {
+    if (event.key == "Enter") {
+        addNameButton.click();
+        return;
+    }
+});
+
+function addNameToDOM(name) {
+    const newNameItem = document.createElement("li");
+    newNameItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+    const newNameText = document.createElement("span");
+    newNameText.textContent = name;
+    const removeNameButton = document.createElement("button");
+    removeNameButton.classList.add("btn", "btn-danger", "btn-sm", "remove-name-button");
+    removeNameButton.innerHTML = "<i class='bi-trash'></i> Remove";
+    newNameItem.appendChild(newNameText);
+    newNameItem.appendChild(removeNameButton);
+    nameList.appendChild(newNameItem);
+    newNameInput.value = "";
+}
+
+addNameButton.addEventListener("click", () => {
+    const newName = newNameInput.value.trim();
+    if (newName) {
+        addNameToDOM(newName);
+        lsArrAdd("names", newName);
+    }
+});
+
+nameList.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        lsArrRemove("names", event.target.parentElement.querySelector("span").textContent);
+        event.target.parentElement.remove();
+    }
+});
+
+pickRandomButton.addEventListener("click", () => {
+    const nameItems = nameList.querySelectorAll("li");
+    const randomIndex = Math.floor(Math.random() * nameItems.length);
+    randomNameDisplay.value = nameItems[randomIndex].querySelector("span").textContent;
+});
+
+
+addCopyFunction(copyNameButton, () => {
+    return randomNameDisplay.value;
+});
+
+lsArrGetFull("names").forEach(name => {
+    addNameToDOM(name);
+});
+</script>
+</body>
+</html>

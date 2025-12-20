@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cardio Credit Card Generator</title>
+   <meta name="google-adsense-account" content="ca-pub-4848025323084395">
+   <script async src="https:// pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395"
+     crossorigin="anonymous"></script>
+     <meta name="google-adsense-account" content="ca-host-pub-4848025323084395">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F3EDF7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            background-color: #F5EFEF;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 100px;
+        }
+        
+        h1 {
+            color: #9A1020;
+            margin-top: 0;
+        }
+        
+        .card-details {
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .card-details label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        .card-details select,
+        .card-details input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .generate-btn {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .generate-btn:hover {
+            background-color: #00fa15;
+        }
+        
+        .generated-card-details {
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .generated-card-details p {
+            margin: 10px 0;
+        }
+        
+        .generated-card-details strong {
+            color: #333;
+        }
+    </style>
+    <script>
+        function generateCardNumber() {
+            var cardNumber = generateRandomNumber(16);
+            var cardBrand = document.getElementById("cardBrand").value;
+            var country = document.getElementById("country").value;
+            var bank = document.getElementById("bank").value;
+            var cvv = generateRandomNumber(3);
+            var expMonth = document.getElementById("expMonth").value;
+            var expYear = generateRandomNumberInRange(2023, 2030);
+            var money = generateRandomNumberInRange(100, 10000);
+            var quantity = document.getElementById("quantity").value;
+
+            document.getElementById("cardNumber").innerText = cardNumber;
+            document.getElementById("cardBrandResult").innerText = cardBrand;
+            document.getElementById("countryResult").innerText = country;
+            document.getElementById("bankResult").innerText = bank;
+            document.getElementById("cvvResult").innerText = cvv;
+            document.getElementById("expMonthResult").innerText = expMonth;
+            document.getElementById("expYearResult").innerText = expYear;
+            document.getElementById("moneyResult").innerText = money;
+            document.getElementById("quantityResult").innerText = quantity;
+        }
+
+        function generateRandomNumber(length) {
+            var result = '';
+            var characters = '0123456789';
+            var charactersLength = characters.length;
+
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+
+            return result;
+        }
+
+        function generateRandomNumberInRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cardio Credit Card Generator</h1>
+        <p>Generator Kartu Kredit dan Validator
+Generator untuk Visa, MasterCard, Amex, JCB, CUP, Diners</p>
+        <div class="card-details">
+            <label>Card Brand:</label>
+            <select id="cardBrand">
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="American Express">American Express</option>
+                <option value="Discover">Discover</option>
+            </select>
+
+            <label>Country:</label>
+            <select id="country">
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+                <option value="Germany">Germany</option>
+                <option value="Australia">Australia</option>
+            </select>
+
+            <label>Bank:</label>
+            <select id="bank">
+                <option value="Bank of America">Bank of America</option>
+                <option value="Chase">Chase</option>
+                <option value="Citi">Citi</option>
+                <option value="Wells Fargo">Wells Fargo</option>
+                <option value="HSBC">HSBC</option>
+            </select>
+
+            <label>CVV/CVV2:</label>
+            <div id="cvvResult"></div>
+
+            <label>EXP Month:</label>
+            <select id="expMonth">
+                <option value="01">01 - January</option>
+                <option value="02">02 - February</option>
+                <option value="03">03 - March</option>
+                <option value="04">04 - April</option>
+                <option value="05">05 - May</option>
+                <option value="06">06 - June</option>
+                <option value="07">07 - July</option>
+                <option value="08">08 - August</option>
+                <option value="09">09 - September</option>
+                <option value="10">10 - October</option>
+                <option value="11">11 - November</option>
+                <option value="12">12 - December</option>
+            </select>
+
+            <label>EXP Year:</label>
+            <div id="expYearResult"></div>
+
+            <label>Money:</label>
+            <div id="moneyResult"></div>
+
+            <label>Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1">
+        </div>
+
+        <button class="generate-btn" onclick="generateCardNumber()">Generate</button>
+
+        <div class="generated-card-details">
+            <h2>Generated Card Details:</h2>
+            <p><strong>Card Number:</strong> <span id="cardNumber"></span></p>
+            <p><strong>Card Brand:</strong> <span id="cardBrandResult"></span></p>
+            <p><strong>Country:</strong> <span id="countryResult"></span></p>
+            <p><strong>Bank:</strong> <span id="bankResult"></span></p>
+            <p><strong>CVV/CVV2:</strong> <span id="cvvResult"></span></p>
+            <p><strong>EXP Month:</strong> <span id="expMonthResult"></span></p>
+            <p><strong>EXP Year:</strong> <span id="expYearResult"></span></p>
+            <p><strong>Money:</strong> $<span id="moneyResult"></span></p>
+            <p><strong>Quantity:</strong> <span id="quantityResult"></span></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine URL Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        #urlList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search Engine URL Generator</h1>
+    <input type="text" id="searchQuery" placeholder="Enter your search query here...">
+    <button id="generateUrls">Generate URLs</button>
+
+    <div id="urlList"></div>
+
+    <script>
+        const searchEngines = [
+            "https://www.google.com/search?q=",
+            "https://www.bing.com/search?q=",
+            "https://search.yahoo.com/search?p=",
+            "https://www.duckduckgo.com/?q=",
+            "https://www.ask.com/web?q=",
+            "https://www.aol.com/search?q=",
+            "https://www.startpage.com/do/search?q=",
+            "https://www.qwant.com/?q=",
+            "https://www.ecosia.org/search?q=",
+            "https://www.yandex.com/search/?text=",
+            "https://www.baidu.com/s?wd=",
+            "https://www.naver.com/search?query=",
+            "https://www.seznam.cz/hledani?q=",
+            "https://www.gibiru.com/search?q=",
+            "https://www.searchencrypt.com/search?q=",
+            "https://www.goo.gl/search?q=",
+            "https://www.wolframalpha.com/input/?i=",
+            "https://www.blekko.com/ws/?q=",
+            "https://www.yippy.com/search?query=",
+            "https://www.kiddle.co/search?q=",
+            "https://www.kartoo.com/search?q=",
+            "https://www.sogou.com/web?query=",
+            "https://www.findx.com/search?q=",
+            "https://www.ixquick.com/do/search?q=",
+            "https://www.ahmia.fi/search?q=",
+            "https://www.letmegooglethat.com/?q=",
+            "https://www.search.com/search?q=",
+            "https://www.metacrawler.com/search?q=",
+            "https://www.webcrawler.com/search?q=",
+            "https://www.dogpile.com/search?q=",
+            "https://www.clusty.com/search?q=",
+            "https://www.blekko.com/ws/?q=",
+            "https://www.gigaBlast.com/search?q=",
+            "https://www.zooglo.com/search?q=",
+            "https://www.1search.com/search?q=",
+            "https://www.ahmia.fi/search?q=",
+            "https://www.ixquick.com/do/search?q=",
+            "https://www.qwant.com/?q=",
+            "https://www.startpage.com/do/search?q=",
+            "https://www.searchencrypt.com/search?q=",
+            "https://www.gibiru.com/search?q=",
+            "https://www.naver.com/search?query=",
+            "https://www.seznam.cz/hledani?q=",
+            "https://www.ecosia.org/search?q=",
+            "https://www.yandex.com/search/?text=",
+            "https://www.baidu.com/s?wd=",
+            "https://www.ask.com/web?q=",
+            "https://www.aol.com/search?q=",
+            "https://www.duckduckgo.com/?q=",
+            "https://www.bing.com/search?q=",
+            "https://www.google.com/search?q="
+        ];
+
+        document.getElementById('generateUrls').addEventListener('click', function() {
+            const query = document.getElementById('searchQuery').value;
+            const urlList = document.getElementById('urlList');
+            urlList.innerHTML = '';
+
+            searchEngines.forEach(engine => {
+                const url = engine + encodeURIComponent(query);
+                const link = document.createElement('a');
+                link.href = url;
+                link.target = '_blank';
+                link.textContent = url;
+                urlList.appendChild(link);
+                urlList.appendChild(document.createElement('br'));
+            });
+        });
+    </script>
+
+</body>
+</html>

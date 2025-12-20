@@ -1,0 +1,78 @@
+# About Us Generator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>About Us Generator</h1>
+    <form id="aboutUsForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" required><br><br>
+        
+        <label for="url">Website URL:</label><br>
+        <input type="url" id="url" required><br><br>
+        
+        <label for="description">Description:</label><br>
+        <textarea id="description" required></textarea><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" required><br><br>
+        
+        <label for="social">Social Links:</label><br>
+        <input type="text" id="social" placeholder="Comma separated links"><br><br>
+        
+        <button type="button" onclick="generateAboutUs()">Generate About Us</button>
+    </form>
+
+    <h2>Output</h2>
+    <textarea id="output" readonly></textarea><br>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function generateAboutUs() {
+            const name = document.getElementById('name').value;
+            const url = document.getElementById('url').value;
+            const description = document.getElementById('description').value;
+            const email = document.getElementById('email').value;
+            const social = document.getElementById('social').value.split(',').map(link => `<a href="${link.trim()}">${link.trim()}</a>`).join(', ');
+
+            const output = `
+                <h1>About Us</h1>
+                <p>Welcome to ${name}!</p>
+                <p>${description}</p>
+                <p>Contact us at: <a href="mailto:${email}">${email}</a></p>
+                <p>Visit us at: <a href="${url}">${url}</a></p>
+                <p>Follow us on: ${social}</p>
+            `;
+
+            document.getElementById('output').value = output;
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output');
+            output.select();
+            document.execCommand('copy');
+            alert('Copied to clipboard!');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Browsher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .search-engine {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .search-engine img {
+            width: 100px;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <div class="search-engine">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" onclick="setSearchEngine('google')">
+        <img src="https://www.bing.com/sa/simg/bing_p_rr.png" alt="Bing" onclick="setSearchEngine('bing')">
+        <img src="https://s.ytimg.com/yts/img/favicon_32-vflOogEID.png" alt="YouTube" onclick="setSearchEngine('youtube')">
+        <img src="https://yandex.com/favicon.ico" alt="Yandex" onclick="setSearchEngine('yandex')">
+        <img src="https://www.baidu.com/favicon.ico" alt="Baidu" onclick="setSearchEngine('baidu')">
+    </div>
+    <input type="text" id="searchQuery" placeholder="Type your search here...">
+    <button onclick="performSearch()">Enter</button>
+</div>
+
+<script>
+    let currentEngine = 'google';
+
+    function setSearchEngine(engine) {
+        currentEngine = engine;
+        alert('Search engine set to ' + engine);
+    }
+
+    function performSearch() {
+        const query = document.getElementById('searchQuery').value;
+        let url;
+
+        switch (currentEngine) {
+            case 'google':
+                url = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                break;
+            case 'bing':
+                url = 'https://www.bing.com/search?q=' + encodeURIComponent(query);
+                break;
+            case 'youtube':
+                url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
+                break;
+            case 'yandex':
+                url = 'https://yandex.com/search/?text=' + encodeURIComponent(query);
+                break;
+            case 'baidu':
+                url = 'https://www.baidu.com/s?wd=' + encodeURIComponent(query);
+                break;
+        }
+
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>

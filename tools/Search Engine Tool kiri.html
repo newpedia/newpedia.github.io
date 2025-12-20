@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .search-engine {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .search-engine select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .search-button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Search Engine Tool</h1>
+    <div class="search-engine">
+        <select id="engineSelect" onchange="changeImage()">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="yahoo">Yahoo</option>
+            <option value="youtube">YouTube</option>
+            <option value="yandex">Yandex</option>
+            <option value="baidu">Baidu</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="ask">Ask.com</option>
+            <option value="aol">AOL</option>
+            <option value="baidu">Baidu</option>
+        </select>
+    </div>
+    <input type="text" class="search-input" placeholder="Type your search here..." id="searchQuery">
+    <button class="search-button" onclick="performSearch()">Search</button>
+    
+    <div class="image-container">
+        <img id="engineImage" src="google.png" alt="Search Engine Image">
+    </div>
+</div>
+
+<script>
+    function changeImage() {
+        const engineSelect = document.getElementById('engineSelect');
+        const engineImage = document.getElementById('engineImage');
+        const selectedEngine = engineSelect.value;
+        engineImage.src = selectedEngine + '.png'; // Assuming images are named after the engines
+    }
+
+    function performSearch() {
+        const searchQuery = document.getElementById('searchQuery').value;
+        const engineSelect = document.getElementById('engineSelect');
+        const selectedEngine = engineSelect.value;
+        const searchUrl = {
+            google: 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery),
+            bing: 'https://www.bing.com/search?q=' + encodeURIComponent(searchQuery),
+            yahoo: 'https://search.yahoo.com/search?p=' + encodeURIComponent(searchQuery),
+            youtube: 'https://www.youtube.com/results?search_query=' + encodeURIComponent(searchQuery),
+            yandex: 'https://yandex.com/search/?text=' + encodeURIComponent(searchQuery),
+            baidu: 'https://www.baidu.com/s?wd=' + encodeURIComponent(searchQuery),
+            duckduckgo: 'https://duckduckgo.com/?q=' + encodeURIComponent(searchQuery),
+            ask: 'https://www.ask.com/web?q=' + encodeURIComponent(searchQuery),
+            aol: 'https://search.aol.com/aol/search?q=' + encodeURIComponent(searchQuery)
+        };
+        window.open(searchUrl[selectedEngine], '_blank');
+    }
+</script>
+
+</body>
+</html>
