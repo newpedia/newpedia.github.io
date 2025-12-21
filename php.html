@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Belajar PHP dari dasar hingga mahir bersama Newpedia. Panduan lengkap tutorial PHP untuk pemula.">
+    <meta name="keywords" content="belajar PHP, tutorial PHP indonesia, pemrograman PHP, newpedia PHP">
+    <meta name="author" content="Newpedia">
+
+    <title>Newpedia PHP Learn</title>
+  <meta name="author" content="Newpedia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+
+  <!-- Open Graph (SEO Sosial) -->
+  <meta property="og:title" content="Newpedia – Portal Informasi Digital">
+  <meta property="og:description" content="Artikel SEO, Teknologi AI, dan Finansial terbaru.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://newpedia.github.io/php.html">
+
+  <!-- AMP Auto Ads -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+  <!-- Google AdSense -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172">
+  </script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZVE02ZHZN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZVE02ZHZN');
+  </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+
+        header {
+            background-color: #0a3cff;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: #0a3cff;
+        }
+
+        pre {
+            background: #f1f1f1;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- AMP Auto Ads -->
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-2826002253171172">
+  </amp-auto-ads>
+
+
+<header>
+    <div class="container">
+      <h1 style="margin:0">Newpedia</h1>
+      <nav style="margin-top:8px">
+        <a href="/">Beranda</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Kontak</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/choices.html">Choices</a>
+        <a href="/license.html">License</a>
+      </nav>
+    </div>
+  </header>
+    <h1>Belajar PHP Lengkap di Newpedia</h1>
+    <p>Panduan Pemrograman PHP untuk Pemula hingga Mahir</p>
+
+
+<main>
+
+<!-- Introduction -->
+<section>
+    <h2>Pendahuluan</h2>
+    <p>
+        PHP (Hypertext Preprocessor) adalah bahasa pemrograman yang sangat populer di dunia web. PHP digunakan untuk membuat situs web dinamis dan aplikasi web. Salah satu alasan mengapa PHP sangat populer adalah karena PHP dapat dijalankan pada berbagai sistem operasi dan platform, serta memiliki kemampuan untuk berinteraksi dengan berbagai jenis database, seperti MySQL.
+    </p>
+    <p>
+        Dalam artikel ini, kita akan membahas PHP mulai dari pengenalan dasar, instalasi, penulisan kode sederhana, hingga konsep-konsep lanjutan yang akan membantu Anda membangun aplikasi web yang dinamis menggunakan PHP.
+    </p>
+</section>
+
+<!-- Section 1: Apa Itu PHP? -->
+<section>
+    <h2>Apa Itu PHP?</h2>
+    <p>
+        PHP adalah bahasa pemrograman server-side yang digunakan untuk membuat halaman web dinamis. Berbeda dengan HTML dan CSS yang bersifat client-side (dijalankan di browser), PHP dijalankan di server dan mengirimkan hasilnya ke browser pengguna.
+    </p>
+    <p>
+        PHP dapat berfungsi untuk melakukan berbagai tugas, mulai dari membuat formulir, mengelola data pengguna, hingga menghubungkan aplikasi web dengan database.
+    </p>
+    <p>
+        PHP pertama kali diciptakan oleh <strong>Rasmus Lerdorf</strong> pada tahun 1993 dan secara resmi dirilis pada tahun 1995. PHP terus berkembang seiring waktu dan saat ini menjadi salah satu bahasa pemrograman web paling banyak digunakan di dunia.
+    </p>
+    <pre>
+        &lt;?php
+            echo "Halo, Dunia!";
+        ?&gt;
+    </pre>
+    <p>
+        Contoh kode di atas akan mencetak "Halo, Dunia!" di halaman web ketika dijalankan.
+    </p>
+</section>
+
+<!-- Section 2: Instalasi PHP -->
+<section>
+    <h2>Instalasi PHP</h2>
+    <p>
+        Untuk mulai menulis kode PHP, Anda perlu menginstal server web dan PHP pada komputer Anda. Ada beberapa cara untuk melakukan ini, salah satunya adalah dengan menggunakan paket pengembangan seperti <strong>XAMPP</strong>, <strong>WAMP</strong>, atau <strong>MAMP</strong>, yang menyediakan server Apache, PHP, dan MySQL dalam satu paket.
+    </p>
+    <ul>
+        <li><strong>XAMPP</strong>: Tersedia untuk Windows, Linux, dan macOS.</li>
+        <li><strong>WAMP</strong>: Hanya tersedia untuk Windows.</li>
+        <li><strong>MAMP</strong>: Tersedia untuk macOS dan Windows.</li>
+    </ul>
+    <p>
+        Setelah Anda menginstal salah satu dari paket tersebut, Anda dapat mulai menulis dan menguji kode PHP di localhost.
+    </p>
+</section>
+
+<!-- Section 3: Struktur Dasar PHP -->
+<section>
+    <h2>Struktur Dasar PHP</h2>
+    <p>
+        Untuk menulis kode PHP, Anda harus menggunakan tag PHP khusus yang dimulai dengan <code>&lt;?php</code> dan diakhiri dengan <code>?&gt;</code>. Semua kode PHP harus ditulis di dalam tag ini agar server mengenalinya sebagai kode PHP.
+    </p>
+    <pre>
+        &lt;?php
+            echo "Ini adalah kode PHP pertama saya!";
+        ?&gt;
+    </pre>
+    <p>
+        Anda bisa menulis kode PHP di dalam file dengan ekstensi <code>.php</code> dan kemudian mengakses file tersebut di server web Anda (misalnya <code>http://localhost/nama-file.php</code>).
+    </p>
+</section>
+
+<!-- Section 4: Variabel dan Tipe Data -->
+<section>
+    <h2>Variabel dan Tipe Data</h2>
+    <p>
+        Dalam PHP, variabel digunakan untuk menyimpan data. Variabel PHP dimulai dengan tanda dolar (<code>$</code>), diikuti dengan nama variabel. Nama variabel harus diawali dengan huruf atau garis bawah dan hanya boleh berisi huruf, angka, dan garis bawah.
+    </p>
+    
+    <h3>Mendeklarasikan Variabel</h3>
+    <pre>
+        &lt;?php
+            $nama = "John Doe";
+            $umur = 25;
+            echo $nama;
+            echo $umur;
+        ?&gt;
+    </pre>
+    <p>
+        Dalam contoh di atas, variabel <code>$nama</code> menyimpan sebuah string, dan variabel <code>$umur</code> menyimpan sebuah angka.
+    </p>
+    
+    <h3>Tipe Data di PHP</h3>
+    <p>
+        PHP mendukung beberapa tipe data dasar, termasuk:
+    </p>
+    <ul>
+        <li><strong>String</strong>: Teks, misalnya: "Halo Dunia"</li>
+        <li><strong>Integer</strong>: Angka bulat, misalnya: 25</li>
+        <li><strong>Float</strong>: Angka desimal, misalnya: 3.14</li>
+        <li><strong>Boolean</strong>: Nilai benar (true) atau salah (false)</li>
+        <li><strong>Array</strong>: Sekumpulan nilai yang terurut</li>
+        <li><strong>Object</strong>: Objek yang dibuat berdasarkan kelas</li>
+        <li><strong>NULL</strong>: Tidak ada nilai</li>
+    </ul>
+</section>
+
+<!-- Section 5: Fungsi dalam PHP -->
+<section>
+    <h2>Fungsi dalam PHP</h2>
+    <p>
+        Fungsi dalam PHP digunakan untuk mengelompokkan kode yang dapat digunakan kembali. Fungsi bisa menerima parameter dan mengembalikan nilai.
+    </p>
+
+    <h3>Mendeklarasikan Fungsi</h3>
+    <pre>
+        &lt;?php
+            function greet($nama) {
+                echo "Halo, $nama!";
+            }
+            greet("Alice");
+        ?&gt;
+    </pre>
+    <p>
+        Dalam contoh di atas, fungsi <code>greet</code> menerima parameter <code>$nama</code> dan mencetak pesan selamat datang.
+    </p>
+
+    <h3>Fungsi yang Mengembalikan Nilai</h3>
+    <pre>
+        &lt;?php
+            function tambah($a, $b) {
+                return $a + $b;
+            }
+            $hasil = tambah(5, 3);
+            echo $hasil;
+        ?&gt;
+    </pre>
+</section>
+
+<!-- Section 6: Pengkondisian (Conditionals) -->
+<section>
+    <h2>Pengkondisian (Conditionals)</h2>
+    <p>
+        Pengkondisian digunakan untuk membuat keputusan dalam program. Di PHP, kita dapat menggunakan <code>if</code>, <code>else</code>, dan <code>elseif</code> untuk menentukan jalur eksekusi kode berdasarkan kondisi.
+    </p>
+
+    <pre>
+        &lt;?php
+            $angka = 10;
+            if ($angka > 5) {
+                echo "Angka lebih besar dari 5";
+            } elseif ($angka == 5) {
+                echo "Angka sama dengan 5";
+            } else {
+                echo "Angka lebih kecil dari 5";
+            }
+        ?&gt;
+    </pre>
+</section>
+
+<!-- Section 7: Perulangan (Loops) -->
+<section>
+    <h2>Perulangan (Loops)</h2>
+    <p>
+        Perulangan digunakan untuk mengeksekusi blok kode beberapa kali. PHP mendukung beberapa jenis perulangan seperti <code>for</code>, <code>while</code>, dan <code>foreach</code>.
+    </p>
+
+    <h3>Perulangan dengan <code>for</code></h3>
+    <pre>
+        &lt;?php
+            for ($i = 0; $i < 5; $i++) {
+                echo $i;
+            }
+        ?&gt;
+    </pre>
+
+    <h3>Perulangan dengan <code>while</code></h3>
+    <pre>
+        &lt;?php
+            $i = 0;
+            while ($i < 5) {
+                echo $i;
+                $i++;
+            }
+        ?&gt;
+    </pre>
+</section>
+
+<!-- Section 8: Menghubungkan dengan Database (MySQL) -->
+<section>
+    <h2>Menghubungkan dengan Database MySQL</h2>
+    <p>
+        Salah satu fitur kuat PHP adalah kemampuannya untuk berinteraksi dengan database, seperti MySQL. Anda bisa menggunakan PHP untuk mengambil, menyimpan, dan memanipulasi data dari database.
+    </p>
+
+    <pre>
+        &lt;?php
+            $conn = new mysqli("localhost", "username", "password", "nama_database");
+            if ($conn->connect_error) {
+                die("Koneksi gagal: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT id, nama FROM users";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "id: " . $row["id"] . " - Nama: " . $row["nama"] . "<br>";
+                }
+            } else {
+                echo "Tidak ada hasil";
+            }
+
+            $conn->close();
+        ?&gt;
+    </pre>
+</section>
+
+<!-- Conclusion -->
+<section>
+    <h2>Kesimpulan</h2>
+    <p>
+        PHP adalah bahasa pemrograman server-side yang powerful dan sangat berguna dalam pengembangan aplikasi web dinamis. Dengan menguasai dasar-dasar PHP seperti variabel, fungsi, pengkondisian, dan perulangan, Anda bisa mulai membuat aplikasi web yang lebih kompleks.
+    </p>
+    <p>
+        Setelah menguasai dasar-dasar ini, Anda bisa melanjutkan untuk mempelajari konsep lanjutan seperti pengelolaan sesi, pengamanan aplikasi, dan penggunaan framework PHP seperti Laravel atau Symfony.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2025 Newpedia — Belajar Pemrograman Web dengan PHP</p>
+</footer>
+
+</body>
+</html>
