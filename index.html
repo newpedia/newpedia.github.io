@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+  
+  
+  <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NewPedia - Berita, Teknologi, Bisnis, Kesehatan, Gaya Hidup, Edukasi, Finansial, Wisata, Keamanan Siber, Properti, Non-Formal.">
+<meta name="keywords" content="berita, teknologi, bisnis, kesehatan, gaya hidup, edukasi, finansial, wisata, keamanan siber, properti, pendidikan non-formal">
   <title>Newpedia – Informasi, Teknologi, SEO & Finansial</title>
   <meta name="description" content="Newpedia adalah portal informasi modern membahas SEO, teknologi AI, finansial, dan panduan digital terbaru.">
   <meta name="keywords" content="Newpedia, SEO, Teknologi, AI, Finansial, Blog, Informasi">
@@ -17,6 +19,9 @@
 <link rel="icon" href="favicon.jpg" type="image/x-icon">
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
 
@@ -44,117 +49,201 @@
     gtag('config', 'G-MZVE02ZHZN');
   </script>
 
-  <!-- CSS -->
-  <style>
-    :root {
-      --primary:#2563eb;
-      --dark:#0f172a;
-      --light:#f8fafc;
-    }
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  hero.classList.add('animate__fadeIn');
+});
+// Contoh animasi scroll sederhana
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  hero.classList.add('animate__fadeIn');
+});
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    }
 
-    body {
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+</script>
+<style>
+    
+    body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
+header { background:#2c3e50; color:#fff; padding:10px 0; }
+header .topbar { text-align:center; }
+nav ul { list-style:none; display:flex; justify-content:center; flex-wrap:wrap; padding:0; margin:0; }
+nav ul li { margin:5px; }
+nav ul li a { color:#fff; text-decoration:none; padding:8px 15px; display:block; border-radius:5px; transition:0.3s; }
+nav ul li a:hover, nav ul li a.active { background:#e67e22; }
 
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 1rem;
-    }
+.hero { text-align:center; padding:50px 20px; background:#3498db; color:#fff; }
+.hero h2 { font-size:2.5em; margin-bottom:10px; }
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+.grid-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:15px; padding:20px; }
+.grid-item { background:#fff; border-radius:10px; overflow:hidden; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:0.3s; }
+.grid-item:hover { transform:translateY(-5px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+.grid-item img { width:100%; height:120px; object-fit:cover; }
+.grid-item span { display:block; padding:10px; font-weight:bold; color:#2c3e50; }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1rem;
-      font-weight: 500;
-    }
+.grid-container-articles { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:15px; padding:20px; }
+.grid-article { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:0.3s; }
+.grid-article:hover { transform:translateY(-5px); box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+.grid-article img { width:100%; height:150px; object-fit:cover; }
+.grid-article h4 { padding:10px; color:#2c3e50; }
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1.5rem;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 1.5rem;
-    }
+footer { text-align:center; padding:20px; background:#ecf0f1; margin-top:20px; }
+.ads-top, .ads-bottom { text-align:center; margin:20px 0; }
 
-    article {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,.05);
-      margin-bottom: 1.5rem;
-    }
+@media (max-width:768px) { nav ul { flex-direction:column; } }
 
-    article h2 {
-      margin-bottom: .5rem;
-      color: var(--primary);
-    }
-
-    aside {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #e5e7eb;
-      margin-top: 2rem;
-      font-size: .9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin: .3rem 0;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
-
-  <!-- AMP Auto Ads -->
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-2826002253171172">
-  </amp-auto-ads>
-
-
 <header>
-    <div class="container">
-      <h1 style="margin:0">Newpedia</h1>
-      <nav style="margin-top:8px">
-        <a href="/">Beranda</a>
+<div class="topbar">
+<h1>NewPedia</h1>
+<p>Berita dan Edukasi Terkini</p>
+</div>
+<nav>
+<ul class="menu">
+<li><a href="index.html" class="active">Beranda</a></li>
+<li><a href="artikel1.html">Teknologi</a></li>
+<li><a href="artikel2.html">Bisnis</a></li>
+<li><a href="artikel3.html">Kesehatan</a></li>
+<li><a href="artikel4.html">Gaya Hidup</a></li>
+<li><a href="artikel5.html">Edukasi</a></li>
+<li><a href="artikel6.html">Finansial</a></li>
+<li><a href="artikel7.html">Wisata</a></li>
+<li><a href="artikel8.html">Keamanan Siber</a></li>
+<li><a href="artikel9.html">Properti</a></li>
+<li><a href="artikel10.html">Non-Formal</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="hero animate__animated animate__fadeIn">
+<h2>Selamat Datang di NewPedia</h2>
+<p>Temukan berita, tips, dan artikel edukasi terbaru dari berbagai kategori.</p>
+</section>
+
+<section class="ads-top">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-xxxxxxxxxxxx"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</section>
+<h1>Raih Sukses Karier di Masa Depan: Kunci Adaptasi dan Pertumbuhan Pribadi</h1>
+   
+
+    
+        <section>
+            <p>Siapa yang tidak bermimpi ingin memiliki karier yang cemerlang pada masa depan nanti? Tentu kamu juga ingin mewujudkan impian tersebut, bukan? Nah, kamu perlu membuat perencanaan karir masa depan sedini mungkin untuk meraih kesuksesan dalam kehidupan profesional.</p>
+            <p>Perencanaan karier sebaiknya dipikirkan secara serius bahkan sejak kamu masih di bangku SMA. Kamu perlu memiliki rencana yang matang mengenai kehidupan karier yang ingin dijalani kelak. Tidak masalah jika sudah bekerja karena kamu masih bisa merencanakan karier untuk peluang yang lebih baik pada masa depanmu.</p>
+            <p>Pertanyaannya, bagaimana caranya merencanakan karier secara matang dan menerapkan rencana yang telah dibuat? Simak saja artikel ini untuk menjawab rasa penasaranmu.</p>
+        </section>
+
+        <section>
+            <h2>Pengertian</h2>
+            <p>Karir adalah perjalanan profesional seseorang yang mencakup serangkaian pekerjaan, pengalaman, dan pencapaian dalam bidang tertentu. Ini mencerminkan perkembangan keterampilan, pengetahuan, dan pertumbuhan pribadi yang dapat meningkatkan kualitas hidup dan kepuasan.</p>
+        </section>
+
+        <section>
+            <h2>Membangun Karier</h2>
+            <p>Membangun karier adalah langkah penting bagi masa depan. Tentukan tujuan, tingkatkan keterampilan, dan jalin jaringan dengan profesional lain. Jangan takut untuk mengambil risiko dan belajar dari pengalaman. Konsistensi dan komitmen akan membawa kesuksesan yang diimpikan.</p>
+        </section>
+
+        <section>
+            <h2>Mengenal Apa Itu Perencanaan Karier</h2>
+            <p>Perencanaan karier adalah proses menentukan jalur karier yang ingin dicapai serta langkah nyata untuk mewujudkannya. Dalam proses ini, kamu akan menetapkan tujuan karier jangka pendek, menengah, dan panjang, lalu menentukan langkah-langkah yang perlu dilakukan untuk mencapai tujuan tersebut.</p>
+            <p>Perencanaan karier masa depan perlu dimulai jauh hari sebelum mencari pekerjaan, tepatnya tahun terakhir SMA atau awal kuliah. Pada usia ini, kamu bisa memikirkan jenis pekerjaan atau karier yang diminati. Kamu bisa mengikuti kursus, magang, program sertifikasi, atau pengalaman kerja virtual untuk lebih memahami pekerjaan yang diinginkan.</p>
+            <p>Perencanaan karier tidak hanya dilakukan sekali saja, tetapi sepanjang kehidupan kariermu. Kamu bisa mengevaluasi posisi kariermu pada saat ini dan tujuan masa depan secara berkala. Evaluasi sangat bermanfaat supaya kamu bisa menyesuaikan rencana demi mencapai tujuan karier yang telah ditetapkan atau beralih ke tujuan yang baru.</p>
+        </section>
+
+        <section>
+            <h2>Pentingnya Perencanaan Karier untuk Masa Depan yang Sukses</h2>
+            <p>Seberapa penting perencanaan karier untuk masa depan? Sangat penting karena kamu bisa menghindari ketidakpastian dalam mencapai tujuan karier. Cobalah membayangkan seseorang yang tidak memiliki rencana karier dan hanya menerima tawaran pekerjaan yang diberikan tanpa mempertimbangkan peluang yang lebih baik. Ketika sudah bosan dengan pekerjaannya, orang tersebut hanya menganggapnya sebagai kenyataan hidup dan tidak memikirkan solusinya.</p>
+            <p>Pekerjaan memainkan peran penting dalam kehidupan sehari-hari. Rencana karier akan membantu kamu dalam membuat keputusan strategis dan menilai peluang berdasarkan manfaatnya terhadap tujuan jangka panjang. Selain itu, rencana karier dapat menghilangkan distraksi yang bisa menghalangi kamu sehingga lebih fokus mencapai tujuan. Terakhir, rencana karier juga bisa menentukan keterampilan (skill) yang perlu dikuasai dan pastinya relevan dengan tujuan karier.</p>
+        </section>
+
+        <section>
+            <h2>Kiat Sukses Berkarier</h2>
+            <ol>
+                <li>Tetapkan tujuan jelas.</li>
+                <li>Kembangkan keterampilan dan pengetahuan.</li>
+                <li>Jalin jaringan profesional.</li>
+                <li>Terus belajar dan beradaptasi.</li>
+                <li>Ambil inisiatif dalam proyek.</li>
+                <li>Kelola waktu dengan baik.</li>
+                <li>Pertahankan sikap positif dan fleksibel.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Tujuan Berkarier</h2>
+            <ol>
+                <li>Mencapai kestabilan finansial untuk kehidupan yang nyaman.</li>
+                <li>Mengembangkan keterampilan dan pengetahuan untuk pertumbuhan pribadi.</li>
+                <li>Mewujudkan passion dan kontribusi positif bagi masyarakat melalui pekerjaan yang berarti.</li>
+            </ol>
+            <p>Dalam mencapai sukses karier di masa depan, kunci utamanya adalah kemampuan beradaptasi dengan perubahan, terus mengembangkan keterampilan, dan membangun jaringan yang solid. Dengan fokus pada pertumbuhan pribadi dan profesional, impian karier dapat terwujud dengan optimal.</p>
+        </section>
+
+        <section>
+            <h2>Kesimpulan</h2>
+            <p>Kesuksesan berkarier di masa depan ditentukan oleh kemampuan beradaptasi, keterampilan yang relevan, dan membangun jaringan yang kuat. Fokus pada pengembangan diri, konsultasi dengan mentor, dan tetap terbuka terhadap peluang baru adalah kunci untuk mencapai impian karier.</p>
+        </section>
+        
+        
+<section class="kategori animate__animated animate__fadeInUp">
+<h3>Kategori Artikel</h3>
+<div class="grid-container">
+<div class="grid-item"><a href="artikel1.html"><img src="https://picsum.photos/300/200?random=1" alt="Teknologi"><span>Teknologi</span></a></div>
+<div class="grid-item"><a href="artikel2.html"><img src="https://picsum.photos/300/200?random=2" alt="Bisnis"><span>Bisnis</span></a></div>
+<div class="grid-item"><a href="artikel3.html"><img src="https://picsum.photos/300/200?random=3" alt="Kesehatan"><span>Kesehatan</span></a></div>
+<div class="grid-item"><a href="artikel4.html"><img src="https://picsum.photos/300/200?random=4" alt="Gaya Hidup"><span>Gaya Hidup</span></a></div>
+<div class="grid-item"><a href="artikel5.html"><img src="https://picsum.photos/300/200?random=5" alt="Edukasi"><span>Edukasi</span></a></div>
+<div class="grid-item"><a href="artikel6.html"><img src="https://picsum.photos/300/200?random=6" alt="Finansial"><span>Finansial</span></a></div>
+<div class="grid-item"><a href="artikel7.html"><img src="https://picsum.photos/300/200?random=7" alt="Wisata"><span>Wisata</span></a></div>
+<div class="grid-item"><a href="artikel8.html"><img src="https://picsum.photos/300/200?random=8" alt="Keamanan Siber"><span>Keamanan Siber</span></a></div>
+<div class="grid-item"><a href="artikel9.html"><img src="https://picsum.photos/300/200?random=9" alt="Properti"><span>Properti</span></a></div>
+<div class="grid-item"><a href="artikel10.html"><img src="https://picsum.photos/300/200?random=10" alt="Non-Formal"><span>Non-Formal</span></a></div>
+</div>
+</section>
+
+<section class="latest-articles animate__animated animate__fadeInUp">
+<h3>Artikel Terbaru</h3>
+<div class="grid-container-articles">
+<div class="grid-article">
+<a href="artikel1.html"><img src="https://picsum.photos/300/200?random=11" alt="Teknologi"><h4>Mengenal Inovasi Teknologi Terkini di Indonesia</h4></a>
+</div>
+<div class="grid-article">
+<a href="artikel2.html"><img src="https://picsum.photos/300/200?random=12" alt="Bisnis"><h4>Strategi Bisnis UMKM di Era Digital</h4></a>
+</div>
+<div class="grid-article">
+<a href="artikel3.html"><img src="https://picsum.photos/300/200?random=13" alt="Kesehatan"><h4>Tips Menjaga Kesehatan di Tengah Kesibukan</h4></a>
+</div>
+<div class="grid-article">
+<a href="artikel4.html"><img src="https://picsum.photos/300/200?random=14" alt="Gaya Hidup"><h4>Mengelola Gaya Hidup Modern dan Produktif</h4></a>
+</div>
+<div class="grid-article">
+<a href="artikel5.html"><img src="https://picsum.photos/300/200?random=15" alt="Edukasi"><h4>Pentingnya Pendidikan untuk Generasi Masa Depan</h4></a>
+</div>
+</div>
+</section>
+
+<section class="ads-bottom">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-xxxxxxxxxxxx"
+     data-ad-slot="0987654321"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</section>
+</main>
+
+<footer>
+    
+    <a href="/">Beranda</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Kontak</a>
         <a href="/privacy.html">Privacy</a>
@@ -162,182 +251,10 @@
         <a href="/terms.html">Terms</a>
         <a href="/choices.html">Choices</a>
         <a href="/license.html">License</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-      <section class="hero">
-      <h2>Selamat datang di Newpedia</h2>
-      <p>Newpedia menyajikan artikel mendalam, panduan praktis, dan analisis untuk membantu Anda memahami topik-topik penting hari ini. Jelajahi artikel unggulan kami di bawah ini.</p>
-      <div class="posts">
-        <article class="post">
-          <h3><a href="/articles/article1.html">Panduan Lengkap: Optimasi SEO 2025</a></h3>
-          <p>Strategi SEO terbaru dan praktik terbaik untuk meningkatkan visibilitas situs Anda di mesin pencari.</p>
-        </article>
-        <article class="post">
-          <h3><a href="/articles/article2.html">Tren Teknologi: AI dan Produktivitas</a></h3>
-          <p>Bagaimana kecerdasan buatan mengubah cara kita bekerja dan berinovasi.</p>
-        </article>
-        <article class="post">
-          <h3><a href="/articles/article3.html">Panduan Finansial: Investasi untuk Pemula</a></h3>
-          <p>Langkah demi langkah membangun portofolio investasi yang sehat untuk jangka panjang.</p>
-        </article>
-      </div>
-    </section>
-       <h1>Raih Sukses Karier di Masa Depan: Kunci Adaptasi dan Pertumbuhan Pribadi</h1>
-   
 
-    <main>
-        <section>
-            <p>Siapa yang tidak bermimpi ingin memiliki karier yang cemerlang pada masa depan nanti? Tentu kamu juga ingin mewujudkan impian tersebut, bukan? Nah, kamu perlu membuat perencanaan karir masa depan sedini mungkin untuk meraih kesuksesan dalam kehidupan profesional.</p>
-            <p>Perencanaan karier sebaiknya dipikirkan secara serius bahkan sejak kamu masih di bangku SMA. Kamu perlu memiliki rencana yang matang mengenai kehidupan karier yang ingin dijalani kelak. Tidak masalah jika sudah bekerja karena kamu masih bisa merencanakan karier untuk peluang yang lebih baik pada masa depanmu.</p>
-            <p>Pertanyaannya, bagaimana caranya merencanakan karier secara matang dan menerapkan rencana yang telah dibuat? Simak saja artikel ini untuk menjawab rasa penasaranmu.</p>
-        </section>
+<p>&copy; 2025 NewPedia. All Rights Reserved.</p>
+</footer>
 
-        <section>
-            <h2>Pengertian</h2>
-            <p>Karir adalah perjalanan profesional seseorang yang mencakup serangkaian pekerjaan, pengalaman, dan pencapaian dalam bidang tertentu. Ini mencerminkan perkembangan keterampilan, pengetahuan, dan pertumbuhan pribadi yang dapat meningkatkan kualitas hidup dan kepuasan.</p>
-        </section>
-
-        <section>
-            <h2>Membangun Karier</h2>
-            <p>Membangun karier adalah langkah penting bagi masa depan. Tentukan tujuan, tingkatkan keterampilan, dan jalin jaringan dengan profesional lain. Jangan takut untuk mengambil risiko dan belajar dari pengalaman. Konsistensi dan komitmen akan membawa kesuksesan yang diimpikan.</p>
-        </section>
-
-        <section>
-            <h2>Mengenal Apa Itu Perencanaan Karier</h2>
-            <p>Perencanaan karier adalah proses menentukan jalur karier yang ingin dicapai serta langkah nyata untuk mewujudkannya. Dalam proses ini, kamu akan menetapkan tujuan karier jangka pendek, menengah, dan panjang, lalu menentukan langkah-langkah yang perlu dilakukan untuk mencapai tujuan tersebut.</p>
-            <p>Perencanaan karier masa depan perlu dimulai jauh hari sebelum mencari pekerjaan, tepatnya tahun terakhir SMA atau awal kuliah. Pada usia ini, kamu bisa memikirkan jenis pekerjaan atau karier yang diminati. Kamu bisa mengikuti kursus, magang, program sertifikasi, atau pengalaman kerja virtual untuk lebih memahami pekerjaan yang diinginkan.</p>
-            <p>Perencanaan karier tidak hanya dilakukan sekali saja, tetapi sepanjang kehidupan kariermu. Kamu bisa mengevaluasi posisi kariermu pada saat ini dan tujuan masa depan secara berkala. Evaluasi sangat bermanfaat supaya kamu bisa menyesuaikan rencana demi mencapai tujuan karier yang telah ditetapkan atau beralih ke tujuan yang baru.</p>
-        </section>
-
-        <section>
-            <h2>Pentingnya Perencanaan Karier untuk Masa Depan yang Sukses</h2>
-            <p>Seberapa penting perencanaan karier untuk masa depan? Sangat penting karena kamu bisa menghindari ketidakpastian dalam mencapai tujuan karier. Cobalah membayangkan seseorang yang tidak memiliki rencana karier dan hanya menerima tawaran pekerjaan yang diberikan tanpa mempertimbangkan peluang yang lebih baik. Ketika sudah bosan dengan pekerjaannya, orang tersebut hanya menganggapnya sebagai kenyataan hidup dan tidak memikirkan solusinya.</p>
-            <p>Pekerjaan memainkan peran penting dalam kehidupan sehari-hari. Rencana karier akan membantu kamu dalam membuat keputusan strategis dan menilai peluang berdasarkan manfaatnya terhadap tujuan jangka panjang. Selain itu, rencana karier dapat menghilangkan distraksi yang bisa menghalangi kamu sehingga lebih fokus mencapai tujuan. Terakhir, rencana karier juga bisa menentukan keterampilan (skill) yang perlu dikuasai dan pastinya relevan dengan tujuan karier.</p>
-        </section>
-
-        <section>
-            <h2>Kiat Sukses Berkarier</h2>
-            <ol>
-                <li>Tetapkan tujuan jelas.</li>
-                <li>Kembangkan keterampilan dan pengetahuan.</li>
-                <li>Jalin jaringan profesional.</li>
-                <li>Terus belajar dan beradaptasi.</li>
-                <li>Ambil inisiatif dalam proyek.</li>
-                <li>Kelola waktu dengan baik.</li>
-                <li>Pertahankan sikap positif dan fleksibel.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Tujuan Berkarier</h2>
-            <ol>
-                <li>Mencapai kestabilan finansial untuk kehidupan yang nyaman.</li>
-                <li>Mengembangkan keterampilan dan pengetahuan untuk pertumbuhan pribadi.</li>
-                <li>Mewujudkan passion dan kontribusi positif bagi masyarakat melalui pekerjaan yang berarti.</li>
-            </ol>
-            <p>Dalam mencapai sukses karier di masa depan, kunci utamanya adalah kemampuan beradaptasi dengan perubahan, terus mengembangkan keterampilan, dan membangun jaringan yang solid. Dengan fokus pada pertumbuhan pribadi dan profesional, impian karier dapat terwujud dengan optimal.</p>
-        </section>
-
-        <section>
-            <h2>Kesimpulan</h2>
-            <p>Kesuksesan berkarier di masa depan ditentukan oleh kemampuan beradaptasi, keterampilan yang relevan, dan membangun jaringan yang kuat. Fokus pada pengembangan diri, konsultasi dengan mentor, dan tetap terbuka terhadap peluang baru adalah kunci untuk mencapai impian karier.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Raih Sukses Karier. Semua hak dilindungi.</p>
-    </footer>
-</body>
-</html>
->Raih Sukses Karier di Masa Depan: Kunci Adaptasi dan Pertumbuhan Pribadi</h1>
-    </header>
-
-    <main>
-        <section>
-            <p>Siapa yang tidak bermimpi ingin memiliki karier yang cemerlang pada masa depan nanti? Tentu kamu juga ingin mewujudkan impian tersebut, bukan? Nah, kamu perlu membuat perencanaan karir masa depan sedini mungkin untuk meraih kesuksesan dalam kehidupan profesional.</p>
-            <p>Perencanaan karier sebaiknya dipikirkan secara serius bahkan sejak kamu masih di bangku SMA. Kamu perlu memiliki rencana yang matang mengenai kehidupan karier yang ingin dijalani kelak. Tidak masalah jika sudah bekerja karena kamu masih bisa merencanakan karier untuk peluang yang lebih baik pada masa depanmu.</p>
-            <p>Pertanyaannya, bagaimana caranya merencanakan karier secara matang dan menerapkan rencana yang telah dibuat? Simak saja artikel ini untuk menjawab rasa penasaranmu.</p>
-        </section>
-
-        <section>
-            <h2>Pengertian</h2>
-            <p>Karir adalah perjalanan profesional seseorang yang mencakup serangkaian pekerjaan, pengalaman, dan pencapaian dalam bidang tertentu. Ini mencerminkan perkembangan keterampilan, pengetahuan, dan pertumbuhan pribadi yang dapat meningkatkan kualitas hidup dan kepuasan.</p>
-        </section>
-
-        <section>
-            <h2>Membangun Karier</h2>
-            <p>Membangun karier adalah langkah penting bagi masa depan. Tentukan tujuan, tingkatkan keterampilan, dan jalin jaringan dengan profesional lain. Jangan takut untuk mengambil risiko dan belajar dari pengalaman. Konsistensi dan komitmen akan membawa kesuksesan yang diimpikan.</p>
-        </section>
-
-        <section>
-            <h2>Mengenal Apa Itu Perencanaan Karier</h2>
-            <p>Perencanaan karier adalah proses menentukan jalur karier yang ingin dicapai serta langkah nyata untuk mewujudkannya. Dalam proses ini, kamu akan menetapkan tujuan karier jangka pendek, menengah, dan panjang, lalu menentukan langkah-langkah yang perlu dilakukan untuk mencapai tujuan tersebut.</p>
-            <p>Perencanaan karier masa depan perlu dimulai jauh hari sebelum mencari pekerjaan, tepatnya tahun terakhir SMA atau awal kuliah. Pada usia ini, kamu bisa memikirkan jenis pekerjaan atau karier yang diminati. Kamu bisa mengikuti kursus, magang, program sertifikasi, atau pengalaman kerja virtual untuk lebih memahami pekerjaan yang diinginkan.</p>
-            <p>Perencanaan karier tidak hanya dilakukan sekali saja, tetapi sepanjang kehidupan kariermu. Kamu bisa mengevaluasi posisi kariermu pada saat ini dan tujuan masa depan secara berkala. Evaluasi sangat bermanfaat supaya kamu bisa menyesuaikan rencana demi mencapai tujuan karier yang telah ditetapkan atau beralih ke tujuan yang baru.</p>
-        </section>
-
-        <section>
-            <h2>Pentingnya Perencanaan Karier untuk Masa Depan yang Sukses</h2>
-            <p>Seberapa penting perencanaan karier untuk masa depan? Sangat penting karena kamu bisa menghindari ketidakpastian dalam mencapai tujuan karier. Cobalah membayangkan seseorang yang tidak memiliki rencana karier dan hanya menerima tawaran pekerjaan yang diberikan tanpa mempertimbangkan peluang yang lebih baik. Ketika sudah bosan dengan pekerjaannya, orang tersebut hanya menganggapnya sebagai kenyataan hidup dan tidak memikirkan solusinya.</p>
-            <p>Pekerjaan memainkan peran penting dalam kehidupan sehari-hari. Rencana karier akan membantu kamu dalam membuat keputusan strategis dan menilai peluang berdasarkan manfaatnya terhadap tujuan jangka panjang. Selain itu, rencana karier dapat menghilangkan distraksi yang bisa menghalangi kamu sehingga lebih fokus mencapai tujuan. Terakhir, rencana karier juga bisa menentukan keterampilan (skill) yang perlu dikuasai dan pastinya relevan dengan tujuan karier.</p>
-        </section>
-
-        <section>
-            <h2>Kiat Sukses Berkarier</h2>
-            <ol>
-                <li>Tetapkan tujuan jelas.</li>
-                <li>Kembangkan keterampilan dan pengetahuan.</li>
-                <li>Jalin jaringan profesional.</li>
-                <li>Terus belajar dan beradaptasi.</li>
-                <li>Ambil inisiatif dalam proyek.</li>
-                <li>Kelola waktu dengan baik.</li>
-                <li>Pertahankan sikap positif dan fleksibel.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Tujuan Berkarier</h2>
-            <ol>
-                <li>Mencapai kestabilan finansial untuk kehidupan yang nyaman.</li>
-                <li>Mengembangkan keterampilan dan pengetahuan untuk pertumbuhan pribadi.</li>
-                <li>Mewujudkan passion dan kontribusi positif bagi masyarakat melalui pekerjaan yang berarti.</li>
-            </ol>
-            <p>Dalam mencapai sukses karier di masa depan, kunci utamanya adalah kemampuan beradaptasi dengan perubahan, terus mengembangkan keterampilan, dan membangun jaringan yang solid. Dengan fokus pada pertumbuhan pribadi dan profesional, impian karier dapat terwujud dengan optimal.</p>
-        </section>
-
-        <section>
-            <h2>Kesimpulan</h2>
-            <p>Kesuksesan berkarier di masa depan ditentukan oleh kemampuan beradaptasi, keterampilan yang relevan, dan membangun jaringan yang kuat. Fokus pada pengembangan diri, konsultasi dengan mentor, dan tetap terbuka terhadap peluang baru adalah kunci untuk mencapai impian karier.</p>
-        </section>
-    <section>
-      <article id="seo">
-        <h2>Panduan SEO 2025</h2>
-        <p>Pelajari strategi SEO terbaru untuk meningkatkan peringkat Google secara organik dan berkelanjutan.</p>
-      </article>
-
-      <article id="teknologi">
-        <h2>Tren Teknologi & AI</h2>
-        <p>AI, automasi, dan inovasi digital yang akan mengubah dunia bisnis dan konten.</p>
-      </article>
-
-      <article id="finansial">
-        <h2>Finansial & Investasi</h2>
-        <p>Tips mengelola keuangan, investasi cerdas, dan peluang digital.</p>
-      </article>
-    </section>
-
-    <aside>
-      <h3>Tentang Newpedia</h3>
-      <p>Newpedia adalah portal informasi modern yang fokus pada edukasi digital, SEO, teknologi, dan finansial.</p>
-    </aside>
-  </main>
-
-  <footer id="kontak">
-    <p>© 2025 Newpedia · All Rights Reserved</p>
-    <p>Privacy · Disclaimer · Terms</p>
-  </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
