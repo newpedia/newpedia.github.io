@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Belajar JavaScript dari dasar hingga mahir bersama Newpedia. Panduan lengkap tutorial JavaScript untuk pemula.">
+    <meta name="keywords" content="belajar javascript, tutorial javascript indonesia, pemrograman javascript, newpedia javascript">
+    <meta name="author" content="Newpedia">
+
+    <title>Newpedia JavaScript Learn</title>
+  <meta name="author" content="Newpedia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+
+  <!-- Open Graph (SEO Sosial) -->
+  <meta property="og:title" content="Newpedia – Portal Informasi Digital">
+  <meta property="og:description" content="Artikel SEO, Teknologi AI, dan Finansial terbaru.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://newpedia.github.io/javascript.html">
+
+  <!-- AMP Auto Ads -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+  <!-- Google AdSense -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172">
+  </script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZVE02ZHZN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZVE02ZHZN');
+  </script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+
+        header {
+            background-color: #0a3cff;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: #0a3cff;
+        }
+
+        pre {
+            background: #f1f1f1;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+  <!-- AMP Auto Ads -->
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-2826002253171172">
+  </amp-auto-ads>
+
+
+<header>
+    <div class="container">
+      <h1 style="margin:0">Newpedia</h1>
+      <nav style="margin-top:8px">
+        <a href="/">Beranda</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Kontak</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/choices.html">Choices</a>
+        <a href="/license.html">License</a>
+      </nav>
+    </div>
+  </header>
+
+    <h1>Belajar JavaScript Lengkap di Newpedia</h1>
+    <p>Panduan Pemrograman JavaScript untuk Pemula hingga Mahir</p>
+
+
+<main>
+
+<!-- Introduction -->
+<section>
+    <h2>Pendahuluan</h2>
+    <p>
+        JavaScript adalah bahasa pemrograman yang digunakan untuk membuat situs web interaktif. 
+        Jika Anda sering menggunakan situs web dinamis, misalnya klik tombol, animasi, atau formulir yang merespon secara langsung,
+        itu semua dilakukan oleh JavaScript. Bahasa ini sangat penting dalam dunia pengembangan web dan digunakan oleh hampir semua situs web.
+    </p>
+    <p>
+        Dalam artikel ini, Anda akan mempelajari dasar-dasar JavaScript, berbagai konsep penting, serta cara menulis dan mengeksekusi kode JavaScript di halaman web.
+    </p>
+</section>
+
+<!-- Section 1: Apa Itu JavaScript? -->
+<section>
+    <h2>Apa Itu JavaScript?</h2>
+    <p>
+        JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan elemen interaktif pada halaman web. 
+        Jika HTML memberikan struktur dan CSS memberi gaya, JavaScript memberikan fungsionalitas.
+    </p>
+    <p>
+        JavaScript pertama kali diciptakan oleh <strong>Brendan Eich</strong> pada tahun 1995. 
+        Awalnya, bahasa ini dinamakan Mocha, kemudian berganti menjadi LiveScript, dan akhirnya dikenal sebagai JavaScript.
+    </p>
+    <p>
+        JavaScript dapat digunakan untuk memanipulasi konten HTML, mengubah gaya CSS, dan menangani peristiwa seperti klik atau input dari pengguna.
+    </p>
+    <pre>
+        &lt;button onclick="alert('Hello, World!')"&gt;Klik saya&lt;/button&gt;
+    </pre>
+</section>
+
+<!-- Section 2: Menulis Kode JavaScript -->
+<section>
+    <h2>Menulis Kode JavaScript</h2>
+    <p>
+        Ada beberapa cara untuk menulis JavaScript pada halaman web. Salah satunya adalah dengan menggunakan tag <code>&lt;script&gt;</code> dalam HTML.
+    </p>
+    <pre>
+        &lt;script&gt;
+            console.log('Halo, Dunia!');
+        &lt;/script&gt;
+    </pre>
+    <p>
+        Kode JavaScript ini akan dicetak pada konsol browser ketika halaman web dimuat.
+    </p>
+</section>
+
+<!-- Section 3: Variabel dan Tipe Data -->
+<section>
+    <h2>Variabel dan Tipe Data</h2>
+    <p>
+        Dalam JavaScript, kita sering menggunakan <strong>variabel</strong> untuk menyimpan informasi yang dapat digunakan dalam program. 
+        Ada tiga cara untuk mendeklarasikan variabel: <code>var</code>, <code>let</code>, dan <code>const</code>.
+    </p>
+    
+    <h3>Variabel dengan <code>var</code></h3>
+    <pre>
+        var nama = 'John Doe';
+        console.log(nama);
+    </pre>
+    <p>
+        Variabel yang dideklarasikan dengan <code>var</code> memiliki cakupan fungsional (function scope).
+    </p>
+
+    <h3>Variabel dengan <code>let</code></h3>
+    <pre>
+        let umur = 25;
+        console.log(umur);
+    </pre>
+    <p>
+        Variabel yang dideklarasikan dengan <code>let</code> memiliki cakupan blok (block scope).
+    </p>
+
+    <h3>Variabel dengan <code>const</code></h3>
+    <pre>
+        const pi = 3.14;
+        console.log(pi);
+    </pre>
+    <p>
+        Variabel yang dideklarasikan dengan <code>const</code> tidak dapat diubah setelah dideklarasikan (konstan).
+    </p>
+
+    <h3>Tipe Data di JavaScript</h3>
+    <ul>
+        <li><strong>String</strong> - Teks, misalnya: "Hello, World!"</li>
+        <li><strong>Number</strong> - Angka, misalnya: 25, 3.14</li>
+        <li><strong>Boolean</strong> - Nilai benar (true) atau salah (false)</li>
+        <li><strong>Object</strong> - Sekumpulan pasangan kunci-nilai (key-value pairs)</li>
+        <li><strong>Array</strong> - Daftar nilai yang terurut</li>
+        <li><strong>Null</strong> - Nilai yang tidak ada</li>
+        <li><strong>Undefined</strong> - Nilai yang belum didefinisikan</li>
+    </ul>
+</section>
+
+<!-- Section 4: Fungsi (Functions) -->
+<section>
+    <h2>Fungsi (Functions)</h2>
+    <p>
+        Fungsi adalah blok kode yang dirancang untuk melakukan tugas tertentu. Anda bisa memanggil fungsi untuk menjalankan kode yang sama berulang kali.
+    </p>
+    
+    <pre>
+        function salam(nama) {
+            console.log('Halo, ' + nama);
+        }
+
+        salam('Alice');
+    </pre>
+    <p>
+        Dalam contoh di atas, fungsi <code>salam</code> menerima parameter <code>nama</code> dan mencetak pesan selamat datang.
+    </p>
+    
+    <h3>Fungsi Anonim (Anonymous Functions)</h3>
+    <pre>
+        const tambah = function(a, b) {
+            return a + b;
+        }
+
+        console.log(tambah(5, 3));
+    </pre>
+</section>
+
+<!-- Section 5: Pengkondisian (Conditionals) -->
+<section>
+    <h2>Pengkondisian (Conditionals)</h2>
+    <p>
+        Pengkondisian digunakan untuk membuat keputusan dalam program. Di JavaScript, kita menggunakan <code>if</code>, <code>else</code>, dan <code>else if</code> untuk pengkondisian.
+    </p>
+
+    <pre>
+        let angka = 10;
+        if (angka > 5) {
+            console.log('Angka lebih besar dari 5');
+        } else {
+            console.log('Angka lebih kecil atau sama dengan 5');
+        }
+    </pre>
+    
+    <h3>Switch Statement</h3>
+    <pre>
+        let hari = 2;
+        switch (hari) {
+            case 1:
+                console.log('Senin');
+                break;
+            case 2:
+                console.log('Selasa');
+                break;
+            default:
+                console.log('Hari tidak valid');
+        }
+    </pre>
+</section>
+
+<!-- Section 6: Perulangan (Loops) -->
+<section>
+    <h2>Perulangan (Loops)</h2>
+    <p>
+        Loops digunakan untuk mengeksekusi blok kode berulang kali. Tiga jenis loop yang umum digunakan di JavaScript adalah <code>for</code>, <code>while</code>, dan <code>do...while</code>.
+    </p>
+
+    <h3>Looping dengan <code>for</code></h3>
+    <pre>
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+    </pre>
+
+    <h3>Looping dengan <code>while</code></h3>
+    <pre>
+        let j = 0;
+        while (j < 5) {
+            console.log(j);
+            j++;
+        }
+    </pre>
+
+    <h3>Looping dengan <code>do...while</code></h3>
+    <pre>
+        let k = 0;
+        do {
+            console.log(k);
+            k++;
+        } while (k < 5);
+    </pre>
+</section>
+
+<!-- Section 7: Event Handling -->
+<section>
+    <h2>Event Handling</h2>
+    <p>
+        JavaScript memungkinkan kita untuk menangani peristiwa (events) yang terjadi pada elemen HTML seperti klik, hover, input teks, dan lainnya.
+    </p>
+
+    <h3>Contoh Event: Klik Tombol</h3>
+    <pre>
+        &lt;button onclick="greetUser()"&gt;Klik Saya&lt;/button&gt;
+
+        &lt;script&gt;
+            function greetUser() {
+                alert('Halo, Pengguna!');
+            }
+        &lt;/script&gt;
+    </pre>
+</section>
+
+<!-- Section 8: Asynchronous JavaScript (Promises, async/await) -->
+<section>
+    <h2>Asynchronous JavaScript</h2>
+    <p>
+        JavaScript bekerja secara asinkron untuk menangani tugas-tugas yang membutuhkan waktu, seperti mengambil data dari server menggunakan AJAX.
+    </p>
+
+    <h3>Promises</h3>
+    <pre>
+        let promise = new Promise(function(resolve, reject) {
+            let success = true;
+            if(success) {
+                resolve('Data berhasil diambil');
+            } else {
+                reject('Data gagal diambil');
+            }
+        });
+
+        promise.then(function(result) {
+            console.log(result);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    </pre>
+
+    <h3>Async/Await</h3>
+    <pre>
+        async function fetchData() {
+            let data = await fetch('https://api.example.com');
+            let jsonData = await data.json();
+            console.log(jsonData);
+        }
+
+        fetchData();
+    </pre>
+</section>
+
+<!-- Conclusion -->
+<section>
+    <h2>Kesimpulan</h2>
+    <p>
+        JavaScript adalah bahasa pemrograman yang sangat powerful dan sangat penting dalam pengembangan web modern.
+        Dengan memahami dasar-dasar JavaScript seperti variabel, fungsi, pengkondisian, dan perulangan, Anda bisa mulai membuat aplikasi web yang dinamis.
+    </p>
+    <p>
+        Selanjutnya, Anda bisa melanjutkan untuk mempelajari teknik-teknik lanjutan seperti AJAX, DOM Manipulation, dan menggunakan framework seperti React atau Vue.js.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2025 Newpedia — Belajar Pemrograman Web dengan JavaScript</p>
+</footer>
+
+</body>
+</html>
