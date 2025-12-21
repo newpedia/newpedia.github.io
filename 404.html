@@ -2,10 +2,13 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>404 – Halaman Tidak Ditemukan | Newpedia</title>
-  <meta name="description" content="Halaman tidak ditemukan. Silakan kembali ke halaman utama Newpedia.">
+  <title>404 | Halaman Tidak Ditemukan – Newpedia</title>
+  <meta name="description" content="Halaman tidak ditemukan. Kembali ke beranda Newpedia.">
   <meta name="robots" content="noindex, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Newpedia, SEO, Teknologi, AI, Finansial, Blog, Informasi">
+  <meta name="author" content="Newpedia">
+  <meta name="robots" content="index, follow">
 
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
@@ -33,11 +36,12 @@
     gtag('js', new Date());
     gtag('config', 'G-MZVE02ZHZN');
   </script>
+
   <style>
     :root {
-      --primary: #2563eb;
-      --dark: #0f172a;
-      --light: #f8fafc;
+      --neon: #38bdf8;
+      --bg1: #020617;
+      --bg2: #020617;
     }
 
     * {
@@ -47,185 +51,181 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #2563eb, #1e40af);
+      height: 100vh;
+      background: radial-gradient(circle at top, #020617, #000);
+      color: #e5e7eb;
       overflow: hidden;
-      color: white;
     }
 
-    /* Floating background circles */
-    .circle {
+    /* PARTICLES */
+    .particle {
       position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--neon);
       border-radius: 50%;
-      background: rgba(255,255,255,.08);
-      animation: float 12s infinite ease-in-out;
-    }
-
-    .circle:nth-child(1) {
-      width: 180px;
-      height: 180px;
-      top: 10%;
-      left: 15%;
-      animation-duration: 16s;
-    }
-
-    .circle:nth-child(2) {
-      width: 120px;
-      height: 120px;
-      bottom: 20%;
-      right: 20%;
-      animation-duration: 14s;
-    }
-
-    .circle:nth-child(3) {
-      width: 80px;
-      height: 80px;
-      top: 60%;
-      left: 30%;
-      animation-duration: 10s;
+      opacity: .6;
+      animation: float 10s linear infinite;
     }
 
     @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-40px); }
-      100% { transform: translateY(0); }
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
     }
 
-    .container {
+    /* CENTER */
+    .wrap {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      z-index: 2;
-      max-width: 500px;
       padding: 2rem;
-      animation: fadeIn 1.2s ease;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .card {
+      max-width: 520px;
+      padding: 2.5rem;
+      border-radius: 20px;
+      background: rgba(2,6,23,.6);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 80px rgba(56,189,248,.15);
+      animation: enter 1.2s ease;
     }
 
-    h1 {
-      font-size: clamp(4rem, 10vw, 7rem);
-      margin: 0;
-      animation: bounce 2s infinite;
+    @keyframes enter {
+      from { opacity: 0; transform: scale(.9) translateY(30px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    /* GLITCH TEXT */
+    .glitch {
+      font-size: clamp(4.5rem, 12vw, 7rem);
+      font-weight: 900;
+      position: relative;
+      color: white;
+      text-shadow: 0 0 25px var(--neon);
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 15px var(--neon); }
+      to { text-shadow: 0 0 35px var(--neon); }
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: "404";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      opacity: .7;
+    }
+
+    .glitch::before {
+      color: #22d3ee;
+      animation: glitch1 2s infinite;
+    }
+
+    .glitch::after {
+      color: #a855f7;
+      animation: glitch2 1.5s infinite;
+    }
+
+    @keyframes glitch1 {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px,2px); }
+      40% { transform: translate(-2px,-2px); }
+      60% { transform: translate(2px,2px); }
+      80% { transform: translate(2px,-2px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitch2 {
+      0% { transform: translate(0); }
+      20% { transform: translate(2px,-2px); }
+      40% { transform: translate(-2px,2px); }
+      60% { transform: translate(-2px,-2px); }
+      80% { transform: translate(2px,2px); }
+      100% { transform: translate(0); }
     }
 
     h2 {
-      margin-top: .5rem;
+      margin: .5rem 0;
       font-weight: 600;
     }
 
     p {
-      opacity: .9;
+      opacity: .85;
       margin: 1rem 0 2rem;
     }
 
     a {
       display: inline-block;
-      padding: .8rem 1.6rem;
-      background: white;
-      color: var(--primary);
+      padding: .8rem 1.8rem;
       border-radius: 999px;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      color: #020617;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 600;
       transition: .3s ease;
     }
 
     a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(56,189,248,.4);
     }
 
     footer {
       position: absolute;
       bottom: 1rem;
+      width: 100%;
+      text-align: center;
       font-size: .8rem;
-      opacity: .7;
-    }
-
-    @media (max-width: 480px) {
-      p {
-        font-size: .95rem;
-      }
+      opacity: .6;
     }
   </style>
 </head>
 
 <body>
- <!-- AMP Auto Ads -->
-  <amp-auto-ads type="adsense"
-    data-ad-client="ca-pub-2826002253171172">
-  </amp-auto-ads>
 
+  <!-- PARTICLES -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDuration = 6 + Math.random() * 10 + "s";
+      p.style.opacity = Math.random();
+      document.body.appendChild(p);
+    }
+  </script>
 
-<header>
-    <div class="container">
-      <h1 style="margin:0">Newpedia</h1>
-      <nav style="margin-top:8px">
-        <a href="/">Beranda</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Kontak</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/disclaimer.html">Disclaimer</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/choices.html">Choices</a>
-        <a href="/license.html">License</a>
-      </nav>
+  <div class="wrap">
+    <div class="card" id="card">
+      <div class="glitch">404</div>
+      <h2>Halaman Tidak Ditemukan</h2>
+      <p>
+        Kamu masuk ke dimensi yang salah.
+        Halaman ini tidak ada atau sudah dipindahkan.
+      </p>
+      <a href="index.html">⬅ Kembali ke Beranda</a>
     </div>
-  </header>
-  <main>
-      <section class="hero">
-      <h2>Selamat datang di Newpedia</h2>
-      <p>Newpedia menyajikan artikel mendalam, panduan praktis, dan analisis untuk membantu Anda memahami topik-topik penting hari ini. Jelajahi artikel unggulan kami di bawah ini.</p>
-      <div class="posts">
-        <article class="post">
-          <h3><a href="/articles/article1.html">Panduan Lengkap: Optimasi SEO 2025</a></h3>
-          <p>Strategi SEO terbaru dan praktik terbaik untuk meningkatkan visibilitas situs Anda di mesin pencari.</p>
-        </article>
-        <article class="post">
-          <h3><a href="/articles/article2.html">Tren Teknologi: AI dan Produktivitas</a></h3>
-          <p>Bagaimana kecerdasan buatan mengubah cara kita bekerja dan berinovasi.</p>
-        </article>
-        <article class="post">
-          <h3><a href="/articles/article3.html">Panduan Finansial: Investasi untuk Pemula</a></h3>
-          <p>Langkah demi langkah membangun portofolio investasi yang sehat untuk jangka panjang.</p>
-        </article>
-      </div>
-    </section>
-      
-  <!-- Animated Background -->
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-
-  <!-- Content -->
-  <div class="container">
-    <h1>404</h1>
-    <h2>Halaman Tidak Ditemukan</h2>
-    <p>
-      Ups! Sepertinya halaman yang kamu cari sudah dipindahkan
-      atau tidak tersedia.
-    </p>
-    <a href="/">⬅ Kembali ke Beranda</a>
   </div>
+<a href="index.html">
+  <footer>© 2025 Newpedia</a></footer>
 
-  <footer>
-    © 2025 Newpedia
-  </footer>
+  <!-- PARALLAX -->
+  <script>
+    const card = document.getElementById("card");
+    document.addEventListener("mousemove", e => {
+      const x = (window.innerWidth / 2 - e.clientX) / 40;
+      const y = (window.innerHeight / 2 - e.clientY) / 40;
+      card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
 
 </body>
 </html>
