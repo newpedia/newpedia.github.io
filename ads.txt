@@ -1,2 +1,2 @@
-# Google AdSense app-ads.txt
+# Google AdSense ads.txt
 google.com, pub-2826002253171172, DIRECT, f08c47fec0942fa0

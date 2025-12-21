@@ -1,115 +1,100 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Newpedia - Portal Pengetahuan, Informasi & Artikel Terbaru</title>
-  <script async='async' custom-element='amp-auto-ads' src='https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js'>
-</script><script async='async' crossorigin='anonymous' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172'/> <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
-  
-  <meta name="description" content="Newpedia, sumber pengetahuan dan informasi artikel terbaru. Temukan konten berkualitas dan update setiap saat.">
-  <meta name="keywords" content="Newpedia, artikel terbaru, pengetahuan, informasi, teknologi, kesehatan, edukasi, SEO">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta content="mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc" name="google-site-verification"/>
-  <script async="async" custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-  <script async="async" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172"></script>
-<link href='/favicon.ico' rel='icon' type='image/png'/>
-  <link href='/newpedia.png' rel='icon' type='image/png'/>
-<link href='/apple-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'/>
-<link href='/apple-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'/>
-<link href='/apple-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'/>
-<link href='/apple-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'/>
-<link href='/apple-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'/>
-<link href='/apple-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'/>
-<link href='/apple-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'/>
-<link href='/apple-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'/>
-<link href='/apple-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'/>
-<link href='/android-icon-192x192.png' rel='icon' sizes='192x192' type='image/png'/>
-<link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'/>
-<link href='/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
-<link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'/>
-<link href='/manifest.json' rel='manifest'/>
-<meta content='#ffffff' name='msapplication-TileColor'/>
-<meta content='/ms-icon-144x144.png' name='msapplication-TileImage'/>
-<meta content='#ffffff' name='theme-color'/>
-<link href='' rel='canonical'/>
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content='mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc' name='google-site-verification'/>
+  <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+  <title>newpedia — responsive page</title>
+
+  <!-- AMP auto-ads script (kept as requested) -->
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+  <!-- AdSense library (kept) -->
+  <script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172"></script>
+
+  <!-- Google Analytics (gtag) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZVE02ZHZN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-MZVE02ZHZN');
+  </script>
+
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
-    header { background:#0073e6; color:#fff; padding:30px; }
-    nav a { color:#fff; margin:0 10px; text-decoration:none;}
-    main { max-width:800px; margin:30px auto; background:#fff; padding:32px; box-shadow:0 0 6px #ccc; }
-    footer { text-align:center; color:#999; margin:30px 0; }
-    article { margin-bottom:36px; }
-    h2 a { text-decoration:none; color:#0073e6; }
+    /* Basic responsive layout */
+    :root{ --max-width:1200px; --accent:#2b6cb0; }
+    *{box-sizing:border-box}
+    body{font-family:Inter, Roboto, Arial, sans-serif;margin:0;color:#111;line-height:1.5;background:#fff}
+    header{background:linear-gradient(90deg,#f7fafc,#edf2f7);padding:1rem 1rem;border-bottom:1px solid #e2e8f0}
+    .container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+    nav{display:flex;align-items:center;justify-content:space-between}
+    nav .brand{font-weight:700;color:var(--accent)}
+    main{padding:1rem}
+    article{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(2,6,23,.06)}
+    h1{font-size:clamp(1.3rem,2.5vw,2rem);margin:0 0 .5rem}
+    p{margin:.6rem 0}
+    .ad-slot{margin:1rem 0;text-align:center}
+    footer{padding:1rem;border-top:1px solid #e2e8f0;background:#f9fafb;margin-top:2rem}
+
+    /* Responsive grid */
+    .grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:760px){.grid{grid-template-columns:2fr 1fr}}
+
+    /* small utilities */
+    .muted{color:#6b7280;font-size:.95rem}
+    a.button{background:var(--accent);color:#fff;padding:.5rem .85rem;border-radius:6px;text-decoration:none}
   </style>
 </head>
 <body>
   <header>
-    <h1>Newpedia</h1>
-    <nav>
-      <a href="index.html">Beranda</a>
-      <a href="artikel1.html">Teknologi</a>
-      <a href="artikel2.html">Edukasi</a>
-      <a href="artikel3.html">Kesehatan</a>
-      <a href="artikel4.html">Bisnis</a>
-      <a href="artikel5.html">Lingkungan</a>
-    </nav>
+    <div class="container">
+      <nav>
+        <div class="brand">newpedia</div>
+        <div class="menu muted">Responsive demo · Ads & Analytics kept</div>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h2>Selamat Datang di Newpedia</h2>
-    <p>Portal pengetahuan berisi artikel terbaru & terupdate seputar teknologi, bisnis, edukasi, kesehatan & lingkungan. Temukan wawasan baru setiap hari!</p>
-    <section>
-        
-        <h1 id="menyelami-dunia-pengetahuan-dan-inovasi-bersama-newpedia">Menyelami Dunia Pengetahuan dan Inovasi Bersama Newpedia</h1>
-<h2 id="pendahuluan">Pendahuluan</h2>
-<p>Dalam era digital saat ini, kecepatan informasi sangat tinggi, dan akses terhadap pengetahuan menjadi lebih mudah. Salah satu platform yang menonjol dalam menyediakan artikel-artikel terbaru dan informatif adalah Newpedia. Artikel ini bertujuan untuk memberikan wawasan mendalam mengenai berbagai topik—mulai dari teknologi hingga kesehatan—yang dapat membantu pembaca memahami dunia di sekitarnya dengan lebih baik.</p>
-<h2 id="1-mengenal-newpedia">1. Mengenal Newpedia</h2>
-<p>Newpedia adalah sumber daya online yang menawarkan beragam artikel dan informasi terbaru. Dengan fokus pada pengetahuan, informasi, teknologi, kesehatan, dan edukasi, Newpedia menjadi wadah yang ideal bagi siapa saja yang ingin meningkatkan pemahaman mereka tentang berbagai bidang.</p>
-<h3 id="1-1-misi-dan-visi-newpedia">1.1 Misi dan Visi Newpedia</h3>
-<p>Misi Newpedia adalah memberikan akses mudah dan cepat terhadap informasi berkualitas. Dengan fokus pada edukasi dan perkembangan teknologi, Newpedia berusaha untuk memberdayakan pembaca dengan pengetahuan yang relevan dan terkini.</p>
-<h2 id="2-pengetahuan-dan-informasi-terbaru">2. Pengetahuan dan Informasi Terbaru</h2>
-<p>Di Newpedia, Anda akan menemukan artikel terbaru tentang banyak tema yang relevan dengan kehidupan sehari-hari. Dengan mengusung prinsip real-time updating, Newpedia memastikan bahwa pembaca selalu mendapatkan informasi yang akurat dan termutakhir.</p>
-<h3 id="2-1-teknologi">2.1 Teknologi</h3>
-<p>Dalam era digital yang terus berkembang, teknologi menjadi topik yang sangat menarik untuk dibahas. Newpedia mengulas berbagai tren teknologi terbaru, inovasi, dan gadget terkini. Anda bisa menemukan artikel yang membahas tentang kecerdasan buatan, Internet of Things (IoT), dan perkembangan perangkat lunak yang dapat membantu meningkatkan efisiensi di berbagai sektor.</p>
-<h3 id="2-2-kesehatan">2.2 Kesehatan</h3>
-<p>Kesehatan adalah salah satu aspek terpenting dalam kehidupan manusia. Newpedia berkomitmen untuk menyajikan informasi kesehatan yang akurat dan berguna. Artikel-artikel tentang gaya hidup sehat, pencegahan penyakit, dan perkembangan terkini di bidang medis sangat sering muncul di platform ini.</p>
-<h3 id="2-3-edukasi">2.3 Edukasi</h3>
-<p>Dunia pendidikan juga mendapatkan perhatian besar di Newpedia. Artikel tentang metode pembelajaran, tips menghadapi ujian, dan perkembangan terbaru dalam kurikulum pendidikan membantu pembaca untuk terus belajar dan berkembang. Newpedia percaya bahwa edukasi adalah kunci untuk membangun masa depan yang lebih baik.</p>
-<h2 id="3-seo-meningkatkan-visibilitas-artikel">3. SEO: Meningkatkan Visibilitas Artikel</h2>
-<p>Dalam dunia digital, memiliki konten yang berkualitas saja tidak cukup. Memahami dan menerapkan Search Engine Optimization (SEO) adalah kunci untuk memastikan bahwa artikel Anda ditemukan oleh banyak orang. Newpedia tidak hanya berfokus pada penyajian konten yang menarik tetapi juga menerapkan teknik SEO yang efektif.</p>
-<h3 id="3-1-teknik-dasar-seo">3.1 Teknik Dasar SEO</h3>
-<p>Penggunaan kata kunci yang tepat, penulisan meta deskripsi yang menarik, dan struktur URL yang bersih adalah beberapa teknik dasar SEO yang digunakan oleh Newpedia. Mengoptimalkan artikel dengan cara ini membantu meningkatkan peringkat di mesin pencari, sehingga lebih banyak orang dapat menjangkau artikel tersebut.</p>
-<h3 id="3-2-pentingnya-konten-berkualitas">3.2 Pentingnya Konten Berkualitas</h3>
-<p>Meskipun SEO penting, Newpedia selalu mengingatkan bahwa konten berkualitas adalah yang utama. Artikel dengan informasi yang mendalam dan bermanfaat akan lebih mungkin untuk dibagikan, menciptakan trafik berkualitas ke situs Newpedia.</p>
-<h2 id="4-kesimpulan">4. Kesimpulan</h2>
-<p>Newpedia adalah sumber yang sangat berharga untuk siapa saja yang mencari informasi terkini dan berguna. Dengan berbagai kategori yang ditawarkan—dari teknologi hingga kesehatan dan pendidikan—Newpedia mampu mengakomodasi beragam minat dan kebutuhan pembaca. Dukung perkembangan pengetahuan Anda dengan menjelajahi artikel terbaru di Newpedia dan tetap update dengan dunia di sekitar Anda.</p>
-<p>Halo dan terima kasih telah membaca artikel ini. Untuk mendapatkan informasi terbaru, jangan ragu untuk mengunjungi Newpedia secara berkala, dan jadilah bagian dari komunitas yang selalu haus akan pengetahuan.</p>
 
-        
+  <main class="container">
+    <div class="grid">
       <article>
-        <h2><a href="artikel1.html">Revolusi Teknologi AI di Indonesia: Peluang dan Tantangan</a></h2>
-        <p>Bagaimana AI mengubah industri dan sistem kerja di Indonesia? Simak analisis dampak, tren, dan prediksi masa depan dari teknologi AI.</p>
+        <h1>Contoh Halaman Responsif dengan AdSense & Analytics</h1>
+        <p class="muted">Halaman sederhana ini menyimpan tag verifikasi Google, Google Analytics (G-MZVE02ZHZN) dan AdSense client <code>ca-pub-2826002253171172</code> seperti diminta.</p>
+
+        <p>Konten artikel bisa Anda ganti sesuai kebutuhan. Tata letak dibuat responsif dan ringan agar mobile-friendly untuk GitHub Pages.</p>
+
+        <div class="ad-slot" aria-hidden="true">
+          <!-- AdSense responsive example unit -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-2826002253171172"
+               data-ad-slot=""
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
+        <h2>Catatan</h2>
+        <p>AMP auto-ads script disertakan sesuai permintaan. Jika Anda menggunakan halaman non-AMP, amp-auto-ads tidak akan bekerja—biarkan saja untuk menjaga integrasi yang Anda minta. Untuk menayangkan iklan pastikan akun AdSense dan domain GitHub Pages Anda sudah disetujui dan dikonfigurasi di konsol AdSense.</p>
+
       </article>
-      <article>
-        <h2><a href="artikel2.html">Strategi Pembelajaran Efektif: Meningkatkan Kualitas Pendidikan Modern</a></h2>
-        <p>Pembahasan tentang metode edukasi dan inovasi pendidikan untuk era digital, dari sekolah hingga universitas di Indonesia.</p>
-      </article>
-      <article>
-        <h2><a href="artikel3.html">Mengenal Pola Hidup Sehat: Panduan Lengkap untuk Generasi Muda</a></h2>
-        <p>Tips dan penjelasan lengkap pola hidup sehat, gaya hidup, serta info kesehatan terbaru untuk remaja dan dewasa muda.</p>
-      </article>
-      <article>
-        <h2><a href="artikel4.html">Transformasi Bisnis di Era Digital: Langkah-Langkah Menuju Sukses</a></h2>
-        <p>Cara UMKM dan perusahaan besar beradaptasi di ekonomi digital, termasuk strategi pemasaran dan inovasi bisnis terkini.</p>
-      </article>
-      <article>
-        <h2><a href="artikel5.html">Perubahan Iklim dan Dampaknya: Apa yang Bisa Kita Lakukan?</a></h2>
-        <p>Ulasan mendalam tentang masalah lingkungan, aksi mitigasi, dan peran masyarakat dalam mengurangi dampak perubahan iklim.</p>
-      </article>
-    </section>
+
+      <aside>
+        <div style="background:#fff;padding:1rem;border-radius:8px;box-shadow:0 1px 4px rgba(2,6,23,.04)">
+          <h3>Ringkasan & Tindakan</h3>
+          <p class="muted">Saya tambahkan juga file <code>ads.txt</code> dan <code>app-ads.txt</code> di root repo dengan baris yang Anda berikan untuk verifikasi AdSense.</p>
+          <p><a class="button" href="/ads.txt">Lihat ads.txt</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="container muted">&copy; newpedia — Generated responsive page with Ads & Analytics snippets</div>
+    </footer>
   </main>
-  <footer>
-    &copy; 2025 Newpedia. Seluruh hak cipta dilindungi undang-undang.
-  </footer>
 </body>
 </html>
