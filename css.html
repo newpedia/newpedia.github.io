@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Belajar CSS dari dasar hingga mahir bersama Newpedia. Panduan lengkap tutorial CSS untuk pemula.">
+    <meta name="keywords" content="belajar CSS, tutorial CSS indonesia, desain web, newpedia CSS">
+    <meta name="author" content="Newpedia">
+
+    <title>Newpedia CSS Learn</title>
+  <meta name="author" content="Newpedia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+
+  <!-- Open Graph (SEO Sosial) -->
+  <meta property="og:title" content="Newpedia – Portal Informasi Digital">
+  <meta property="og:description" content="Artikel SEO, Teknologi AI, dan Finansial terbaru.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://newpedia.github.io/css.html">
+
+  <!-- AMP Auto Ads -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+  <!-- Google AdSense -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172">
+  </script>
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZVE02ZHZN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MZVE02ZHZN');
+  </script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #222;
+        }
+
+        header {
+            background-color: #0a3cff;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+        }
+
+        h1, h2, h3 {
+            color: #0a3cff;
+        }
+
+        pre {
+            background: #f1f1f1;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+      <h1 style="margin:0">Newpedia</h1>
+      <nav style="margin-top:8px">
+        <a href="/">Beranda</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Kontak</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/choices.html">Choices</a>
+        <a href="/license.html">License</a>
+      </nav>
+    </div>
+  </header>
+    <h1>Belajar CSS Lengkap di Newpedia</h1>
+    <p>Panduan Desain Web dengan CSS untuk Pemula hingga Mahir</p>
+
+
+<main>
+
+<!-- Introduction -->
+<section>
+    <h2>Pendahuluan</h2>
+    <p>
+        CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk menggaya dan mendesain elemen-elemen HTML di sebuah halaman web. CSS memungkinkan Anda untuk mengontrol tampilan dan layout dari halaman web, seperti warna, font, ukuran, dan tata letak elemen.
+    </p>
+    <p>
+        Di artikel ini, kita akan mempelajari berbagai konsep dasar dan lanjutan CSS yang akan membantu Anda menciptakan desain web yang menarik dan responsif.
+    </p>
+</section>
+
+<!-- Section 1: Apa Itu CSS? -->
+<section>
+    <h2>Apa Itu CSS?</h2>
+    <p>
+        CSS adalah bahasa yang digunakan untuk mengatur gaya (style) elemen-elemen HTML. Tanpa CSS, sebuah halaman web akan terlihat seperti teks biasa tanpa desain. CSS memungkinkan kita untuk memberikan warna, font, jarak, posisi, dan banyak elemen desain lainnya.
+    </p>
+    <p>
+        CSS memungkinkan pemisahan antara struktur (HTML) dan tampilan (styling). Ini memudahkan pemeliharaan dan pengembangan situs web yang lebih besar.
+    </p>
+    <pre>
+        &lt;style&gt;
+            body {
+                background-color: #f4f4f4;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+        &lt;/style&gt;
+    </pre>
+</section>
+
+<!-- Section 2: Menulis CSS -->
+<section>
+    <h2>Menulis CSS</h2>
+    <p>
+        Ada tiga cara utama untuk menulis CSS: inline, internal, dan eksternal. 
+    </p>
+    
+    <h3>1. Inline CSS</h3>
+    <p>
+        CSS inline ditulis langsung pada elemen HTML menggunakan atribut <code>style</code>.
+    </p>
+    <pre>
+        &lt;h1 style="color: blue; text-align: center;"&gt;Judul Halaman&lt;/h1&gt;
+    </pre>
+
+    <h3>2. Internal CSS</h3>
+    <p>
+        CSS internal ditulis di dalam tag <code>&lt;style&gt;</code> di bagian <code>&lt;head&gt;</code> HTML.
+    </p>
+    <pre>
+        &lt;style&gt;
+            body {
+                font-family: Arial, sans-serif;
+            }
+        &lt;/style&gt;
+    </pre>
+
+    <h3>3. External CSS</h3>
+    <p>
+        CSS eksternal ditulis dalam file terpisah dengan ekstensi <code>.css</code>. CSS ini kemudian dihubungkan dengan halaman HTML menggunakan tag <code>&lt;link&gt;</code>.
+    </p>
+    <pre>
+        &lt;link rel="stylesheet" href="style.css"&gt;
+    </pre>
+    <p>
+        External CSS lebih dianjurkan karena membuat kode HTML lebih bersih dan memungkinkan pemeliharaan yang lebih mudah.
+    </p>
+</section>
+
+<!-- Section 3: Selektor CSS -->
+<section>
+    <h2>Selektor CSS</h2>
+    <p>
+        Selektor CSS digunakan untuk memilih elemen HTML yang akan diberikan gaya. Ada beberapa jenis selektor CSS:
+    </p>
+    
+    <h3>1. Selektor Elemen (Type Selector)</h3>
+    <pre>
+        h1 {
+            color: blue;
+        }
+    </pre>
+    <p>
+        Selektor ini mengubah gaya semua elemen <code>&lt;h1&gt;</code> di halaman.
+    </p>
+
+    <h3>2. Selektor Kelas (Class Selector)</h3>
+    <pre>
+        .judul {
+            font-size: 24px;
+            color: red;
+        }
+    </pre>
+    <p>
+        Selektor kelas digunakan dengan tanda titik <code>.</code>. Kelas dapat diterapkan pada banyak elemen HTML.
+    </p>
+
+    <h3>3. Selektor ID (ID Selector)</h3>
+    <pre>
+        #judulUtama {
+            font-weight: bold;
+        }
+    </pre>
+    <p>
+        Selektor ID digunakan dengan tanda pagar <code>#</code> dan hanya dapat diterapkan pada satu elemen di halaman.
+    </p>
+
+    <h3>4. Selektor Atribut</h3>
+    <pre>
+        a[href="https://newpedia.github.io"] {
+            color: green;
+        }
+    </pre>
+    <p>
+        Selektor atribut digunakan untuk memilih elemen berdasarkan nilai atribut tertentu.
+    </p>
+</section>
+
+<!-- Section 4: Properti CSS -->
+<section>
+    <h2>Properti CSS</h2>
+    <p>
+        CSS memiliki berbagai properti yang dapat digunakan untuk mengatur berbagai aspek elemen HTML, seperti warna, font, margin, padding, dan banyak lainnya.
+    </p>
+
+    <h3>1. Warna dan Latar Belakang</h3>
+    <pre>
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+    </pre>
+
+    <h3>2. Font</h3>
+    <pre>
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </pre>
+
+    <h3>3. Margin dan Padding</h3>
+    <pre>
+        div {
+            margin: 20px;
+            padding: 10px;
+        }
+    </pre>
+    <p>
+        Margin mengatur jarak di luar elemen, sementara padding mengatur jarak di dalam elemen.
+    </p>
+
+    <h3>4. Border</h3>
+    <pre>
+        img {
+            border: 2px solid black;
+        }
+    </pre>
+    <p>
+        Properti <code>border</code> digunakan untuk memberikan garis tepi pada elemen.
+    </p>
+</section>
+
+<!-- Section 5: Layout dan Posisi -->
+<section>
+    <h2>Layout dan Posisi</h2>
+    <p>
+        CSS memungkinkan Anda untuk mengatur layout halaman web dan posisi elemen dengan berbagai teknik, seperti menggunakan <code>display</code>, <code>position</code>, dan <code>float</code>.
+    </p>
+
+    <h3>1. Display</h3>
+    <pre>
+        div {
+            display: block;
+        }
+    </pre>
+    <p>
+        Properti <code>display</code> mengatur bagaimana elemen ditampilkan di halaman, apakah sebagai elemen blok (block), inline, atau elemen fleksibel (flex).
+    </p>
+
+    <h3>2. Positioning</h3>
+    <pre>
+        div {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+    </pre>
+    <p>
+        Properti <code>position</code> digunakan untuk menentukan bagaimana elemen diposisikan dalam halaman, apakah relatif terhadap elemen lain atau tetap pada posisi tertentu.
+    </p>
+
+    <h3>3. Flexbox</h3>
+    <pre>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </pre>
+    <p>
+        Flexbox adalah metode layout CSS yang memungkinkan elemen-elemen dalam kontainer untuk diatur secara fleksibel dan responsif.
+    </p>
+</section>
+
+<!-- Section 6: Responsif dengan CSS -->
+<section>
+    <h2>Desain Responsif dengan CSS</h2>
+    <p>
+        Desain responsif memungkinkan halaman web menyesuaikan tampilannya agar sesuai dengan berbagai ukuran layar, seperti desktop, tablet, dan ponsel. CSS Media Queries adalah alat utama untuk mencapainya.
+    </p>
+
+    <pre>
+        @media (max-width: 768px) {
+            body {
+                background-color: #e0e0e0;
+            }
+            .container {
+                flex-direction: column;
+            }
+        }
+    </pre>
+    <p>
+        Media Queries digunakan untuk menerapkan gaya berbeda berdasarkan ukuran layar atau perangkat.
+    </p>
+</section>
+
+<!-- Conclusion -->
+<section>
+    <h2>Kesimpulan</h2>
+    <p>
+        CSS adalah alat yang sangat kuat untuk mendesain halaman web. Dengan menguasai berbagai konsep seperti selektor, properti, layout, dan desain responsif, Anda dapat membuat situs web yang menarik dan fungsional. 
+    </p>
+    <p>
+        Langkah berikutnya adalah memperdalam penggunaan CSS dengan mempelajari teknik-teknik lanjutan seperti animasi, transisi, dan penggunaan framework CSS seperti Bootstrap.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2025 Newpedia — Belajar Desain Web dengan CSS</p>
+</footer>
+
+</body>
+</html>
