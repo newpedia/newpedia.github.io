@@ -1,0 +1,68 @@
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse, urljoin
+
+# Fungsi untuk mengekstrak semua link pada halaman web
+def get_all_links(url):
+    try:
+        response = requests.get(url)
+        # Cek jika halaman berhasil diambil (status 200)
+        if response.status_code != 200:
+            print(f"Gagal mengakses {url} dengan status {response.status_code}")
+            return set()
+
+        soup = BeautifulSoup(response.content, 'html.parser')
+        links = set()
+
+        # Menemukan semua tag <a> dan mengekstrak URL
+        for anchor in soup.find_all('a', href=True):
+            link = anchor['href']
+            # Menggabungkan URL relatif menjadi URL absolut
+            full_url = urljoin(url, link)
+            # Menyaring hanya URL yang berasal dari domain yang sama
+            if urlparse(full_url).netloc == urlparse(url).netloc:
+                links.add(full_url)
+
+        return links
+    except requests.RequestException as e:
+        print(f"Terjadi kesalahan saat mengakses {url}: {e}")
+        return set()
+
+# Fungsi untuk crawl lebih dalam (mengunjungi link-link di halaman)
+def crawl_site(base_url):
+    # Mulai dengan mengambil link dari halaman utama
+    to_visit = {base_url}
+    visited = set()
+    all_links = set()
+
+    while to_visit:
+        current_url = to_visit.pop()
+        if current_url not in visited:
+            visited.add(current_url)
+            links = get_all_links(current_url)
+            all_links.update(links)
+            # Menambahkan link baru ke daftar kunjungan jika belum dikunjungi
+            to_visit.update(links - visited)
+
+    return all_links
+
+# URL situs yang ingin di-crawl
+base_url = 'https://newpedia.github.io/'
+
+# Mengambil semua URL dari situs (termasuk halaman dalam)
+all_links = crawl_site(base_url)
+
+# Menyusun sitemap dalam format XML
+sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
+sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+for link in all_links:
+    sitemap += f'  <url>\n    <loc>{link}</loc>\n  </url>\n'
+
+sitemap += '</urlset>'
+
+# Menyimpan sitemap ke file XML
+with open('my_sitemap.xml', 'w') as file:
+    file.write(sitemap)
+
+print("Sitemap telah dibuat dan disimpan sebagai sitemap.xml")
