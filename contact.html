@@ -1,28 +1,66 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kontak — Newpedia</title>
-  <meta name="description" content="Hubungi Newpedia untuk kerjasama, pertanyaan redaksi, atau masukan." />
-  <meta content='mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc' name='google-site-verification'/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Newpedia</title>
+  <meta name="description" content="Halaman kontak untuk menghubungi tim Newpedia." />
+  <meta name="google-site-verification" content="mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc">
+
+  <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+  <script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172"></script>
+
+  <style>
+    body{font-family:system-ui,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.7;margin:0;padding:0;}
+    header{background:#2563eb;color:white;padding:1rem 0;text-align:center;}
+    header h1{margin:0;}
+    nav a{color:white;margin:0 0.7rem;text-decoration:none;font-weight:500;}
+    nav a:hover{text-decoration:underline;}
+    main{max-width:900px;margin:2rem auto;background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05);}
+    h1,h2{color:#2563eb;margin-top:1.5rem;}
+    p,label,input,textarea,button{margin:.8rem 0;font-family:inherit;}
+    input,textarea{width:100%;padding:.6rem;border:1px solid #cbd5e1;border-radius:6px;}
+    button{padding:.8rem 1.5rem;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer;}
+    button:hover{background:#1d4ed8;}
+    footer{text-align:center;margin:2rem 0;font-size:.9rem;color:#64748b;}
+    @media (max-width:768px){main{padding:1.2rem;margin:1rem;} nav a{display:block;margin:0.3rem 0;}}
+  </style>
 </head>
 <body>
-  <main class="container">
-    <h1>Kontak</h1>
-    <p>Untuk pertanyaan, kerjasama, atau masukan, silakan gunakan alamat email berikut:</p>
-    <ul>
-      <li>Email redaksi: hello@newpedia.org</li>
-      <li>Kerjasama: partners@newpedia.org</li>
-    </ul>
-    <h2>Form Kontak</h2>
-    <form action="mailto:hello@newpedia.org" method="post" enctype="text/plain">
-      <label>Nama:<br/><input type="text" name="name" required></label><br/>
-      <label>Email:<br/><input type="email" name="email" required></label><br/>
-      <label>Pesan:<br/><textarea name="message" rows="6" required></textarea></label><br/>
-      <button type="submit">Kirim</button>
+
+  <amp-auto-ads type="adsense" data-ad-client="ca-pub-2826002253171172"></amp-auto-ads>
+
+  <header>
+    <h1>Newpedia</h1>
+    <nav>
+      <a href="/">Beranda</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Kontak</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/choices.html">Choices</a>
+      <a href="/license.html">License</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us</h1>
+    <p>Silakan hubungi tim Newpedia melalui form berikut:</p>
+    <form action="mailto:admin@newpedia.com" method="post" enctype="text/plain">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Pesan:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Kirim Pesan</button>
     </form>
-    <p><a href="/">Kembali ke beranda</a></p>
   </main>
+
+  <footer>© 2025 Newpedia · Contact</footer>
 </body>
 </html>
