@@ -1,15 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Newpedia — Wawasan, Panduan, dan Berita</title>
-  <meta name="description" content="Newpedia: artikel mendalam, panduan praktis, dan berita terkini untuk pembaca Indonesia." />
-  <meta content='mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc' name='google-site-verification'/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Newpedia – Informasi, Teknologi, SEO & Finansial</title>
+  <meta name="description" content="Newpedia adalah portal informasi modern membahas SEO, teknologi AI, finansial, dan panduan digital terbaru.">
+  <meta name="keywords" content="Newpedia, SEO, Teknologi, AI, Finansial, Blog, Informasi">
+  <meta name="author" content="Newpedia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
-  <script async='async' custom-element='amp-auto-ads' src='https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js'></script>
-  <script async='async' crossorigin='anonymous' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172'></script>
-  <!-- Google Analytics (GA4) -->
+
+  <!-- Open Graph (SEO Sosial) -->
+  <meta property="og:title" content="Newpedia – Portal Informasi Digital">
+  <meta property="og:description" content="Artikel SEO, Teknologi AI, dan Finansial terbaru.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://newpedia.github.io/">
+
+  <!-- AMP Auto Ads -->
+  <script async custom-element="amp-auto-ads"
+    src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+
+  <!-- Google AdSense -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172">
+  </script>
+
+  <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZVE02ZHZN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,19 +37,114 @@
     gtag('js', new Date());
     gtag('config', 'G-MZVE02ZHZN');
   </script>
+
+  <!-- CSS -->
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;color:#111;background:#f7f7f7}
-    header{background:#fff;padding:16px 20px;border-bottom:1px solid #eee}
-    .container{max-width:960px;margin:24px auto;padding:0 16px}
-    nav a{margin-right:12px;color:#0366d6;text-decoration:none}
-    .hero{background:#fff;padding:24px;border-radius:8px}
-    footer{margin-top:32px;padding:20px 0;text-align:center;color:#666}
-    .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
-    .post{background:#fff;padding:16px;border-radius:8px}
+    :root {
+      --primary:#2563eb;
+      --dark:#0f172a;
+      --light:#f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    article {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.05);
+      margin-bottom: 1.5rem;
+    }
+
+    article h2 {
+      margin-bottom: .5rem;
+      color: var(--primary);
+    }
+
+    aside {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #e5e7eb;
+      margin-top: 2rem;
+      font-size: .9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: .3rem 0;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
+
+  <!-- AMP Auto Ads -->
+  <amp-auto-ads type="adsense"
+    data-ad-client="ca-pub-2826002253171172">
+  </amp-auto-ads>
+
+
+<header>
     <div class="container">
       <h1 style="margin:0">Newpedia</h1>
       <nav style="margin-top:8px">
@@ -44,8 +159,8 @@
       </nav>
     </div>
   </header>
-  <main class="container">
-    <section class="hero">
+  <main>
+      <section class="hero">
       <h2>Selamat datang di Newpedia</h2>
       <p>Newpedia menyajikan artikel mendalam, panduan praktis, dan analisis untuk membantu Anda memahami topik-topik penting hari ini. Jelajahi artikel unggulan kami di bawah ini.</p>
       <div class="posts">
@@ -63,10 +178,34 @@
         </article>
       </div>
     </section>
+      
+    <section>
+      <article id="seo">
+        <h2>Panduan SEO 2025</h2>
+        <p>Pelajari strategi SEO terbaru untuk meningkatkan peringkat Google secara organik dan berkelanjutan.</p>
+      </article>
+
+      <article id="teknologi">
+        <h2>Tren Teknologi & AI</h2>
+        <p>AI, automasi, dan inovasi digital yang akan mengubah dunia bisnis dan konten.</p>
+      </article>
+
+      <article id="finansial">
+        <h2>Finansial & Investasi</h2>
+        <p>Tips mengelola keuangan, investasi cerdas, dan peluang digital.</p>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Tentang Newpedia</h3>
+      <p>Newpedia adalah portal informasi modern yang fokus pada edukasi digital, SEO, teknologi, dan finansial.</p>
+    </aside>
   </main>
-  <footer>
-    <p>&copy; 2025 Newpedia. All rights reserved.</p>
-    <p><a href="/sitemap.xml">Sitemap</a></p>
+
+  <footer id="kontak">
+    <p>© 2025 Newpedia · All Rights Reserved</p>
+    <p>Privacy · Disclaimer · Terms</p>
   </footer>
+
 </body>
 </html>
