@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sertifikat Editor</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; background:#f4f4f4}
+    .container{display:grid; grid-template-columns:320px 1fr; gap:16px; padding:16px}
+    .panel{background:#fff; padding:16px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1)}
+    label{display:block; margin-top:12px; font-size:14px}
+    input, textarea, button{width:100%; padding:8px; margin-top:4px}
+    button{cursor:pointer; border-radius:8px; border:none; background:#111; color:#fff}
+    canvas{max-width:100%; background:#fff; border-radius:12px}
+  </style>
+
+ <script async='async' custom-element='amp-auto-ads' src='https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js'>
+</script><script async='async' crossorigin='anonymous' src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172'/> <meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+  
+  <meta name="description" content="Newpedia, sumber pengetahuan dan informasi artikel terbaru. Temukan konten berkualitas dan update setiap saat.">
+  <meta name="keywords" content="Newpedia, artikel terbaru, pengetahuan, informasi, teknologi, kesehatan, edukasi, SEO">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta content="mEW1pg9_Rt6Er9O83kfj15NGwqhtfOiU9TGwGNym_Wc" name="google-site-verification"/>
+  <script async="async" custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+  <script async="async" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2826002253171172"></script>
+<link href='/favicon.ico' rel='icon' type='image/png'/>
+  <link href='/newpedia.png' rel='icon' type='image/png'/>
+<link href='/apple-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'/>
+<link href='/apple-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'/>
+<link href='/apple-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'/>
+</head>
+<body>
+<div class="container">
+  <div class="panel">
+    <h3>Editor Sertifikat</h3>
+    <label>Nama Penerima<input id="nama" value="Nama Anda"></label>
+    <label>Organisasi<input id="org" value="Organisasi Anda"></label>
+    <label>Deskripsi<textarea id="desk">Atas Partisipasi dan Kerjasama bersama Kami</textarea></label>
+    <label>Penanggung Jawab<input id="pj" value="Nama Penanggung Jawab"></label>
+    <label>Ketua Pelaksana<input id="ketua" value="Nama Ketua Pelaksana"></label>
+    <label>Upload Background<input type="file" id="bgUpload"></label>
+    <button onclick="render()">Update Preview</button>
+    <button onclick="downloadPNG()">Download PNG</button>
+    <button onclick="window.print()">Print</button>
+    <button onclick="shareImage()">Share</button>
+  </div>
+  <div class="panel">
+    <canvas id="cv" width="1600" height="1131"></canvas>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let bg = new Image();
+bg.src = 'Emas Putih Dekoratif Formal Penghargaan Dakwah Islam Sertifikat_20251214_070223_0000.png';
+
+bg.onload = render;
+
+document.getElementById('bgUpload').onchange = e =>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const r = new FileReader();
+  r.onload = ev =>{ bg.src = ev.target.result };
+  r.readAsDataURL(f);
+}
+
+function render(){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.drawImage(bg,0,0,cv.width,cv.height);
+  ctx.fillStyle = '#000';
+  ctx.textAlign='center';
+
+  ctx.font='48px serif';
+  ctx.fillText(document.getElementById('org').value, cv.width/2, 220);
+
+  ctx.font='bold 96px serif';
+  ctx.fillText('SERTIFIKAT', cv.width/2, 360);
+
+  ctx.font='72px cursive';
+  ctx.fillText(document.getElementById('nama').value, cv.width/2, 560);
+
+  ctx.font='36px serif';
+  ctx.fillText(document.getElementById('desk').value, cv.width/2, 640);
+
+  ctx.font='28px serif';
+  ctx.fillText(document.getElementById('pj').value, cv.width*0.25, 900);
+  ctx.fillText(document.getElementById('ketua').value, cv.width*0.75, 900);
+}
+
+function downloadPNG(){
+  const a = document.createElement('a');
+  a.download='sertifikat.png';
+  a.href=cv.toDataURL('image/png');
+  a.click();
+}
+
+async function shareImage(){
+  if(!navigator.share) return alert('Share tidak didukung');
+  const res = await fetch(cv.toDataURL());
+  const blob = await res.blob();
+  const file = new File([blob],'sertifikat.png',{type:'image/png'});
+  navigator.share({files:[file], title:'Sertifikat'});
+}
+</script>
+
+<footer></footer>
+</body>
+</html>
