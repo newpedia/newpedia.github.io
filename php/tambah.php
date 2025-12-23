@@ -1,23 +1,25 @@
 <?php
 include 'config.php';
+include 'auth.php';
 
 if (isset($_POST['simpan'])) {
-    $judul = $_POST['judul'];
-    $isi   = $_POST['isi'];
-
-    mysqli_query($conn, "INSERT INTO artikel VALUES(NULL,'$judul','$isi',NOW())");
+    $stmt = $pdo->prepare("INSERT INTO artikel (judul, isi) VALUES (?,?)");
+    $stmt->execute([$_POST['judul'], $_POST['isi']]);
     header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
 
-<h2>Tambah Artikel</h2>
+<h3>Tambah Artikel</h3>
 <form method="post">
-    <input type="text" name="judul" placeholder="Judul" required><br><br>
-    <textarea name="isi" placeholder="Isi artikel" rows="5" required></textarea><br><br>
-    <button name="simpan">Simpan</button>
+<input class="form-control mb-2" name="judul" placeholder="Judul" required>
+<textarea class="form-control mb-3" name="isi" rows="5" required></textarea>
+<button class="btn btn-primary" name="simpan">Simpan</button>
 </form>
 
 </body>
