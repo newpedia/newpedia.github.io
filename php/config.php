@@ -1,11 +1,18 @@
 <?php
+session_start();
+
 $host = "localhost";
+$db   = "newpedia";
 $user = "root";
 $pass = "";
-$db   = "newpedia";
 
-$conn = mysqli_connect($host, $user, $pass, $db);
-
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$db;charset=UTF8",
+        $user,
+        $pass,
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
+} catch (PDOException $e) {
+    die("DB Error: " . $e->getMessage());
 }
