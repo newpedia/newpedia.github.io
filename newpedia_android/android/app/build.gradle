@@ -1,3 +1,8 @@
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
 defaultConfig {
     applicationId "com.newpedia.app"
     minSdkVersion 21
