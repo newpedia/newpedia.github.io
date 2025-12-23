@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Support Newpedia with Bitcoin & Lightning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Support independent knowledge with Bitcoin and Lightning Network. Learn why Bitcoin matters and how your donation helps keep Newpedia free and open.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 860px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.6);
+  margin-bottom: 50px;
+}
+
+h1, h2, h3 {
+  color: #facc15;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: .85;
+  font-size: 17px;
+}
+
+.donation-box {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 16px;
+  background: #020617;
+  text-align: center;
+}
+
+.addr {
+  word-break: break-all;
+  background: #020617;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 14px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: #22c55e;
+  color: #020617;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+.qr {
+  margin-top: 16px;
+  background: white;
+  padding: 10px;
+  border-radius: 14px;
+  display: inline-block;
+}
+
+article p {
+  margin-bottom: 18px;
+  opacity: .95;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 13px;
+  opacity: .6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<center>
+  <!-- HERO -->
+  <div class="card">
+    <h1>Support Newpedia ⚡</h1>
+    <p class="subtitle">
+      Independent knowledge, powered by Bitcoin and the Lightning Network.
+    </p>
+<!-- LIGHTNING -->
+<div class="section">
+  <div class="label">⚡ Lightning (LNURL Pay)</div>
+  <div class="addr" id="ln">
+    bothpersian87@walletofsatoshi.com
+  </div>
+  <button class="btn" onclick="copy('ln')">Copy Lightning Address</button>
+
+  <div class="qr">
+    <img width="200"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=lightning:bothpersian87@walletofsatoshi.com">
+  </div>
+
+  <p style="font-size:13px;opacity:.7">
+    Scan QR → wallet Lightning → bayar ⚡
+  </p>
+</div>
+
+<!-- BITCOIN -->
+<div class="section">
+  <div class="label">₿ Bitcoin (On-chain)</div>
+  <div class="addr" id="btc">
+    bc1qkdc2uuq7ha535lw78kqx24xnrkw030rp95muyd
+  </div>
+  <button class="btn" onclick="copy('btc')">Copy Alamat BTC</button>
+
+  <div class="qr">
+    <img width="200"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bitcoin:bc1qkdc2uuq7ha535lw78kqx24xnrkw030rp95muyd">
+  </div>
+</div>
+</div>
+</center>
+    <div class="donation-box">
+      <h2>Donate via LNURL Pay</h2>
+      <p>Scan once • Choose amount • Pay instantly</p>
+
+      <div class="addr" id="lnurl">
+        PASTE_YOUR_LNURL_HERE
+      </div>
+
+      <button onclick="copy()">Copy LNURL</button>
+
+      <div class="qr">
+        <img width="220"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=PASTE_YOUR_LNURL_HERE">
+      </div>
+
+      <p style="font-size:13px;opacity:.7">
+        Compatible with Wallet of Satoshi, Phoenix, Alby, Breez, Zeus
+      </p>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <article class="card">
+
+<h2>Why We Chose Bitcoin</h2>
+
+<p>
+Newpedia was created with a simple idea in mind: knowledge should be open, accessible,
+and independent from centralized control. In a digital world dominated by advertising,
+tracking, and opaque algorithms, it becomes increasingly difficult for independent
+projects to survive without compromising their values.
+</p>
+
+<p>
+Bitcoin represents more than a digital currency. It is a monetary network built on
+transparency, voluntary participation, and cryptographic truth. By choosing Bitcoin
+and the Lightning Network as our funding model, we align the way we receive support
+with the principles we believe knowledge should stand on.
+</p>
+
+<p>
+There is no account to freeze, no intermediary to censor transactions, and no
+requirement for users to surrender personal data. A donation is simply value sent
+from one individual to another, peer to peer.
+</p>
+
+<h2>The Problem with Traditional Monetization</h2>
+
+<p>
+Most websites today rely on advertising, data collection, or sponsored content.
+While this model may appear “free” to users, the true cost is paid in attention,
+privacy, and sometimes even truth.
+</p>
+
+<p>
+Ads distort incentives. When revenue depends on clicks, outrage and sensationalism
+often outperform accuracy and nuance. Data collection erodes trust. Sponsored content
+blurs the line between information and marketing.
+</p>
+
+<p>
+We wanted a different path. One where readers support content because it is useful,
+not because they are being tracked or manipulated.
+</p>
+
+<h2>Bitcoin as a Tool for Digital Freedom</h2>
+
+<p>
+Bitcoin allows value to move across the internet as freely as information. This is
+not a small achievement. Before Bitcoin, sending money online required banks,
+payment processors, and permission.
+</p>
+
+<p>
+With Bitcoin, anyone can participate. There are no gatekeepers deciding who is
+“bankable” or which countries deserve access. This matters especially for creators
+and readers in regions where financial infrastructure is limited or restrictive.
+</p>
+
+<p>
+By accepting Bitcoin donations, Newpedia remains globally accessible. Support can
+come from anywhere in the world, at any time, without friction.
+</p>
+
+<h2>The Lightning Network: Making Bitcoin Practical</h2>
+
+<p>
+While Bitcoin on-chain transactions are secure and robust, they are not optimized
+for small, frequent payments. The Lightning Network solves this by enabling instant,
+low-fee micropayments.
+</p>
+
+<p>
+Lightning allows a reader to support Newpedia with as little as a few satoshis.
+There is no minimum donation and no unnecessary overhead.
+</p>
+
+<p>
+LNURL Pay simplifies this even further. Instead of copying invoices or amounts,
+you scan once, choose how much you want to give, and pay.
+</p>
+
+<h2>Why LNURL Pay Matters</h2>
+
+<p>
+LNURL is an open standard. It is not owned by a company or controlled by a platform.
+Any compatible wallet can interact with it.
+</p>
+
+<p>
+This openness ensures long-term compatibility and avoids lock-in. If one wallet
+disappears, the standard remains.
+</p>
+
+<p>
+For users, LNURL Pay removes friction. For creators, it removes complexity.
+</p>
+
+<h2>How Your Support Is Used</h2>
+
+<p>
+Every satoshi donated to Newpedia helps keep the platform independent and sustainable.
+Funds are used for:
+</p>
+
+<p>
+• Infrastructure and hosting  
+• Research and writing time  
+• Tooling and security  
+• Long-term preservation of content  
+</p>
+
+<p>
+There are no shareholders, advertisers, or sponsors to please. The only incentive
+is to serve readers better.
+</p>
+
+<h2>Why Small Donations Matter</h2>
+
+<p>
+You don’t need to send a large amount to make a difference. One of Bitcoin’s most
+powerful features is granularity.
+</p>
+
+<p>
+When thousands of readers contribute small amounts, independence becomes possible
+without relying on any single entity.
+</p>
+
+<p>
+Micropayments enable a healthier relationship between creators and readers:
+voluntary, transparent, and aligned.
+</p>
+
+<h2>Privacy and Respect</h2>
+
+<p>
+Newpedia does not track users, sell data, or profile readers. Donating via Bitcoin
+does not require creating an account or sharing personal information.
+</p>
+
+<p>
+Your support is private, permissionless, and final.
+</p>
+
+<h2>The Future of Knowledge Funding</h2>
+
+<p>
+We believe Bitcoin-powered funding models represent the future of independent media
+and education.
+</p>
+
+<p>
+Instead of paywalls that exclude, or ads that exploit, we envision a world where
+knowledge flows freely and is supported voluntarily.
+</p>
+
+<p>
+This model scales globally and ethically. It rewards quality over clickbait and
+trust over manipulation.
+</p>
+
+<h2>A Personal Thank You</h2>
+
+<p>
+If you choose to support Newpedia, know that your contribution directly enables
+this project to exist.
+</p>
+
+<p>
+Even if you don’t donate, simply reading, sharing, and engaging with the content
+already helps.
+</p>
+
+<p>
+Bitcoin makes it possible for ideas to be supported directly by the people who value
+them. That is powerful.
+</p>
+
+<h2>Final Thoughts</h2>
+
+<p>
+The internet was meant to be open. Bitcoin helps keep it that way.
+</p>
+
+<p>
+Thank you for being part of this experiment in independent knowledge.
+</p>
+
+  </article>
+
+  <footer>
+    © Newpedia • Bitcoin & Lightning Only • No Ads • No Tracking
+  </footer>
+
+</div>
+
+<script>
+function copy() {
+  navigator.clipboard.writeText(
+    document.getElementById('lnurl').innerText
+  );
+  alert('LNURL copied');
+}
+</script>
+<script>
+function copy(id) {
+  navigator.clipboard.writeText(
+    document.getElementById(id).innerText
+  );
+  alert("Berhasil disalin");
+}
+</script>
+</body>
+</html>
