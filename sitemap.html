@@ -1,29 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sitemap — Newpedia</title>
-  <meta name="description" content="Sitemap Newpedia: daftar semua halaman di website kami.">
+  <meta charset="UTF-8">
+  <title>Sitemap | Newpedia</title>
+  <meta name="robots" content="index, follow">
   <style>
-    body{font-family:system-ui,sans-serif;background:#f8fafc;color:#0f172a;padding:2rem;}
-    h1{color:#2563eb;}
-    a{color:#2563eb;text-decoration:none;}
-    a:hover{text-decoration:underline;}
-    ul{line-height:1.6;}
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 20px;
+    }
+    h1 {
+      color: #38bdf8;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
+<link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<meta name="google-site-verification" content="47B1yi4GJhhnr0ZFMAyrlYZ8w89zY6iV_4CSpgh5ACU" />
+
+  
 </head>
 <body>
-  <h1>Sitemap Newpedia</h1>
-  <ul>
-    <li><a href="/">Beranda</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/contact.html">Contact</a></li>
-    <li><a href="/privacy.html">Privacy Policy</a></li>
-    <li><a href="/disclaimer.html">Disclaimer</a></li>
-    <li><a href="/terms.html">Terms & Conditions</a></li>
-    <li><a href="/choices.html">Choices</a></li>
-    <li><a href="/license.html">License</a></li>
-  </ul>
+
+<h1>Sitemap Newpedia</h1>
+<ul id="sitemap"></ul>
+
+<script>
+const base = "https://newpedia.github.io";
+
+const pages = [
+  "/terms.html",
+  "/trending.html",
+  "/windows.html",
+  "/about.html",
+  "/about_Version2.html",
+  "/aplikasi.html",
+  "/artikel10.html",
+  "/artikel6.html",
+  "/artikel7.html",
+  "/artikel8.html",
+  "/artikel9.html",
+  "/choices.html",
+  "/contact.html",
+  "/on-page-seo-2025.html",
+  "/panduan-seo-2025.html",
+  "/php.html",
+  "/privacy.html",
+  "/spot.html",
+  "/royalti.html",
+  "/sitemap.html",
+  "/starlink.html",
+  "/css.html",
+  "/disclaimer.html",
+  "/donate.html",
+  "/spotlight",
+
+  // News
+  "/news/10-manfaat-mbg.html",
+  "/news/10-pemain-sepakbola-terbaik-dunia.html",
+  "/news/404.html",
+  "/news/aston-villa-vs-man-utd.html",
+  "/news/beasiswa.html",
+  "/news/buku.html",
+  "/news/cuan-dari-tiktok-strategi-monetisasi.html",
+  "/news/film-terbaru-desember-2025.html",
+  "/news/galaksi-dan-kehidupan-luar-angkasa.html",
+  "/news/harga-rumah-di-jakarta.html",
+  "/news/hp.html",
+  "/news/jumlah-televisi-di-indonesia-perkembangan-dan-tren.html",
+  "/news/liburan.html",
+  "/news/maskapai.html",
+  "/news/mbg.html",
+  "/news/orang-terkaya-di-dunia-perusahaan-dan-dampak-sosial.html",
+  "/news/perkembangan-ai-di-indonesia.html",
+  "/news/pesawat.html",
+  "/news/prediksi-cuaca-global-dan-indonesia.html",
+  "/news/transformasi-digital-umkm-indonesia.html",
+
+  // Articles
+  "/articles/article1.html",
+  "/articles/article2.html",
+  "/articles/article3.html",
+
+  // US Categories
+  "/us/index.html",
+  "/us/africa",
+  "/us/asia-pacific",
+  "/us/china",
+  "/us/cloud-computing",
+  "/us/cybersecurity",
+  "/us/economy",
+  "/us/europe",
+  "/us/fintech",
+  "/us/geopolitics",
+  "/us/global-trade",
+  "/us/investing",
+  "/us/iot",
+  "/us/japan",
+  "/us/middle-east",
+  "/us/smart-cities",
+  "/us/space",
+  "/us/stocks",
+
+  // Tools
+  "/tools/wa QR generator.html",
+  "/tools/Arabic Keyboard Tool.html"
+];
+
+const ul = document.getElementById("sitemap");
+
+pages.forEach(path => {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = base + path;
+  a.textContent = base + path;
+  a.target = "_blank";
+  li.appendChild(a);
+  ul.appendChild(li);
+});
+</script>
+
 </body>
 </html>
