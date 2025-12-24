@@ -108,6 +108,59 @@ body.dark-mode .card, body.dark-mode .navbar, body.dark-mode footer { background
 .ad-box { background:#e9ecef; padding:30px; text-align:center; font-weight:bold; }
 body.dark-mode .ad-box { background:#2a2a2a; }
 </style>
+<style>
+.np-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.np-popup-box {
+  background: #fff;
+  padding: 20px;
+  max-width: 360px;
+  width: 90%;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.np-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.np-buttons button,
+.np-buttons a {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.np-buttons button {
+  background: #007bff;
+  color: #fff;
+}
+
+.donate-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.np-buttons button:last-child {
+  background: #ccc;
+  color: #000;
+}
+</style>
 
 </head>
 
@@ -388,6 +441,18 @@ Your Gateway to Structured, Accessible, and Reliable Information</p>
   window.AndroidAdMob && AndroidAdMob.showBanner();
 </script>
 
+<div id="np-choice-popup" class="np-popup">
+  <div class="np-popup-box">
+    <h3>📢 Support NewPedia</h3>
+    <p>Save this site, subscribe for updates, or support us with a donation.</p>
+
+    <div class="np-buttons">
+      <button onclick="npSubscribe()">⭐ Save & Subscribe</button>
+      <a href="https://newpedia.github.io/donate" class="donate-btn">❤️ Donate</a>
+      <button onclick="npClose()">Later</button>
+    </div>
+  </div>
+</div>
 
 <footer class="bg-dark text-light text-center py-4">
 <div><a href="/">Beranda</a>
@@ -410,6 +475,26 @@ Your Gateway to Structured, Accessible, and Reliable Information</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (!localStorage.getItem("npPopupSeen")) {
+    setTimeout(() => {
+      document.getElementById("np-choice-popup").style.display = "flex";
+    }, 4000); // show after 4 seconds
+  }
+});
+
+function npClose() {
+  document.getElementById("np-choice-popup").style.display = "none";
+  localStorage.setItem("npPopupSeen", "true");
+}
+
+function npSubscribe() {
+  localStorage.setItem("npSubscribed", "true");
+  alert("✅ NewPedia saved! You can bookmark this site for updates.");
+  npClose();
+}
+</script>
 
 </body>
 </html>
